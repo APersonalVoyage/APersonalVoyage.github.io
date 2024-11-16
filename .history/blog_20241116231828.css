@@ -1,0 +1,102 @@
+/* General reset and layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ff9900;
+}
+
+/* Main section styling */
+.blog-section-container {
+  display: block !important;
+  width: 100%;
+  overflow: visible;
+}
+
+
+.blog-header {
+  margin-bottom: 40px; /* Adds space between title and blog post */
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 10px; /* Space below title */
+}
+
+.section__text {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.blog-containers {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Aligns blog posts to the center */
+  gap: 30px; /* Space between posts */
+}
+
+.blog-details {
+  background-color: #f9f9f9;
+  padding: 20px;
+  width: 80%; /* Makes sure the blog posts aren't too wide */
+  max-width: 800px; /* Limits the maximum width */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.blog-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.blog-link:hover {
+  color: #ff9900; /* Highlight on hover */
+}
+
+.blog-summary {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 40px;
+}
