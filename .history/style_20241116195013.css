@@ -389,82 +389,6 @@ article .icon {
   cursor: default;
 }
 
-/* blog section */
-
-
-/* BLOG SECTION */
-
-
-/* Main section styling */
-.blog-section-container {
-  padding: 20px;
-  text-align: center;
-}
-
-.blog-header {
-  margin-bottom: 40px; /* Adds space between title and blog post */
-}
-
-.title {
-  font-size: 2rem;
-  margin-bottom: 10px; /* Space below title */
-}
-
-.section__text {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 40px;
-}
-
-.blog-containers {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Aligns blog posts to the center */
-  gap: 30px; /* Space between posts */
-}
-
-.blog-details {
-  background-color: #f9f9f9;
-  padding: 20px;
-  width: 80%; /* Makes sure the blog posts aren't too wide */
-  max-width: 800px; /* Limits the maximum width */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-title {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-.blog-link {
-  text-decoration: none;
-  color: #333;
-}
-
-.blog-link:hover {
-  color: #ff9900; /* Highlight on hover */
-}
-
-.blog-summary {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-/* Footer Styling */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 40px;
-}
-
-
-
-
 /* PROJECTS SECTION */
 
 #projects {
@@ -541,4 +465,100 @@ footer {
 
 footer p {
   text-align: center;
+}
+/* General Blog Page Styles */
+.blog-section {
+  padding: 20px;
+  background-color: white; /* Same background as your website */
+  color: black; /* Ensure text color matches your website */
+}
+
+.blog-post-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.blog-post {
+  padding: 15px;
+  border: 1px solid #ddd; /* Match your design's border styles */
+  border-radius: 8px;
+  background-color: #f9f9f9; /* Slightly off-white background for posts */
+}
+
+.blog-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.blog-link {
+  text-decoration: none;
+  color: #007bff; /* Match your link color */
+}
+
+.blog-link:hover {
+  text-decoration: underline;
+}
+
+.blog-summary {
+  font-size: 1rem;
+  color: #555; /* Softer color for summaries */
+}
+
+/* Navbar Active Link */
+.nav-link.active {
+  font-weight: bold;
+  color: #007bff; /* Highlight the active link */
+}
+/* General Styles */
+body {
+  background-color: #ffffff; /* Matches your current background color */
+  font-family: Arial, sans-serif; /* A clean, readable font */
+  color: #333; /* Text color */
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for Flexbox Layout */
+.container {
+  display: flex; /* Arrange items in a row */
+  flex-direction: row; /* Ensures items are horizontal */
+  justify-content: space-around; /* Evenly distribute items */
+  align-items: center; /* Center items vertically */
+  gap: 20px; /* Space between items */
+  margin: 20px auto; /* Center the container on the page */
+  max-width: 1200px; /* Set a max width for the layout */
+  padding: 20px; /* Add padding inside the container */
+  background-color: #f7f7f7; /* Slightly off-white background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Individual Items */
+.container p {
+  margin: 0;
+  padding: 10px 15px; /* Add padding for a clean look */
+  background-color: #e8e8e8; /* Light grey background */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+  font-size: 16px; /* Readable font size */
+}
+
+/* Optional: List Style for Bullet Points */
+.horizontal-list {
+  list-style: none; /* Remove default bullet points */
+  display: flex; /* Arrange list items in a row */
+  gap: 15px; /* Space between list items */
+  padding: 0;
+  margin: 0;
+}
+
+.horizontal-list li {
+  display: inline; /* Ensure items stay inline */
+  padding: 10px 15px;
+  background-color: #e8e8e8; /* Light grey background */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-size: 16px;
 }

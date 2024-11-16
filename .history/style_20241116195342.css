@@ -389,80 +389,57 @@ article .icon {
   cursor: default;
 }
 
-/* blog section */
-
-
-/* BLOG SECTION */
-
-
-/* Main section styling */
-.blog-section-container {
-  padding: 20px;
-  text-align: center;
+/* Blog Section Container */
+.blog-container {
+  background-color: #f7f7f7; /* Slightly off-white background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 20px; /* Padding inside the container */
+  margin: 20px auto; /* Center the container */
+  max-width: 1200px; /* Set a max width for the section */
 }
 
-.blog-header {
-  margin-bottom: 40px; /* Adds space between title and blog post */
+/* Blog Title */
+.blog-container h1 {
+  text-align: center; /* Center the title */
+  font-size: 24px; /* Title font size */
+  color: #333; /* Text color */
+  margin-bottom: 20px; /* Space below the title */
 }
 
-.title {
-  font-size: 2rem;
-  margin-bottom: 10px; /* Space below title */
+/* Blog Posts Layout */
+.blog-posts {
+  display: flex; /* Flexbox for horizontal arrangement */
+  flex-wrap: wrap; /* Wrap items if they overflow */
+  gap: 20px; /* Space between items */
+  justify-content: center; /* Center the blog posts */
 }
 
-.section__text {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 40px;
+/* Individual Blog Post */
+.blog-post {
+  background-color: #ffffff; /* White background for each post */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 15px; /* Padding inside the blog post */
+  width: 300px; /* Fixed width for consistency */
+  text-align: center; /* Center the content */
+  font-size: 16px; /* Readable font size */
+  color: #333; /* Text color */
 }
 
-.blog-containers {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Aligns blog posts to the center */
-  gap: 30px; /* Space between posts */
+/* Blog Post Title */
+.blog-post h2 {
+  font-size: 18px; /* Slightly larger font for post titles */
+  margin-bottom: 10px; /* Space below the title */
+  color: #444; /* Subtle dark shade for title */
 }
 
-.blog-details {
-  background-color: #f9f9f9;
-  padding: 20px;
-  width: 80%; /* Makes sure the blog posts aren't too wide */
-  max-width: 800px; /* Limits the maximum width */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Blog Post Content */
+.blog-post p {
+  font-size: 14px; /* Smaller font size for details */
+  line-height: 1.5; /* Improved readability */
+  color: #555; /* Softer text color for content */
 }
-
-.project-title {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-
-.blog-link {
-  text-decoration: none;
-  color: #333;
-}
-
-.blog-link:hover {
-  color: #ff9900; /* Highlight on hover */
-}
-
-.blog-summary {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-/* Footer Styling */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 40px;
-}
-
-
 
 
 /* PROJECTS SECTION */
