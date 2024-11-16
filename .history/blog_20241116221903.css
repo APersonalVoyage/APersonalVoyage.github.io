@@ -1,13 +1,20 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background: linear-gradient(135deg, #f4f4f4, #d3d3d3); /* Consistent gradient background */
 }
 
 .header {
-  background: #333;
+  background: #222; /* Darker color for the header */
   color: white;
   padding: 10px 0;
 }
@@ -75,7 +82,7 @@ body {
 
 .footer {
   text-align: center;
-  background: #333;
+  background: #222; /* Matches the header */
   color: white;
   padding: 10px;
   margin-top: 20px;

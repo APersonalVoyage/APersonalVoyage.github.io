@@ -1,0 +1,94 @@
+/* General reset and layout */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ff9900;
+}
+
+/* Blog Post Content */
+.main-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.blog-article {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-article-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.blog-article-body {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: justify; /* Aligns text for better readability */
+}
+
+.subheading {
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.philosophers-list,
+.reflection-questions {
+  text-align: left; /* Aligns list items to the left */
+  margin: 20px auto;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.philosophers-list li,
+.reflection-questions li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 40px;
+}
