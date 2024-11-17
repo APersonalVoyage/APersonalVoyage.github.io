@@ -77,56 +77,6 @@ a:hover {
   cursor: default;
 }
 
-/* Responsive Navigation */
-@media (max-width: 768px) {
-  nav {
-    justify-content: space-between; /* Aligns logo and hamburger menu */
-  }
-
-  /* Hide desktop menu and show hamburger menu */
-  .nav-links {
-    display: none; /* Hide links by default */
-    flex-direction: column; /* Stack links vertically */
-    position: absolute;
-    top: 17vh; /* Adjust based on header height */
-    right: 0;
-    background-color: #333;
-    padding: 1rem;
-    border-radius: 8px;
-    gap: 1rem;
-    z-index: 10;
-  }
-
-  /* Show menu when open */
-  .nav-links.show {
-    display: flex; /* Makes links visible */
-  }
-
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
-
-  /* Hamburger Menu */
-  .hamburger-menu {
-    display: block; /* Ensure the hamburger icon shows on smaller screens */
-  }
-}
-
-/* Ensures desktop layout remains intact */
-@media (min-width: 769px) {
-  .hamburger-menu {
-    display: none; /* Hide hamburger menu on larger screens */
-  }
-
-  .nav-links {
-    display: flex; /* Show links in horizontal layout */
-  }
-}
-
-
-
 /* HAMBURGER MENU */
 
 #hamburger-nav {

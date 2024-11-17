@@ -5,27 +5,23 @@
 * {
   margin: 0;
   padding: 0;
-  
 }
 
 body {
   font-family: "Poppins", sans-serif;
   background-color: #0a0a0a;
   color: white;
-
 }
 
 html {
   scroll-behavior: smooth;
-
 }
 
 p {
   color: #ffffff;
-  color: rgb(53, 53, 53);
 }
 
-p{
+p {
   color: #ffffff;
 }
 
@@ -58,7 +54,6 @@ nav {
 a {
   color: #ffffff;
   text-decoration: none;
-  text-decoration-color: white;
 }
 
 a:hover {
@@ -66,7 +61,6 @@ a:hover {
   text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration-color: #ffffff;
-
 }
 
 .logo {
@@ -77,56 +71,6 @@ a:hover {
   cursor: default;
 }
 
-/* Responsive Navigation */
-@media (max-width: 768px) {
-  nav {
-    justify-content: space-between; /* Aligns logo and hamburger menu */
-  }
-
-  /* Hide desktop menu and show hamburger menu */
-  .nav-links {
-    display: none; /* Hide links by default */
-    flex-direction: column; /* Stack links vertically */
-    position: absolute;
-    top: 17vh; /* Adjust based on header height */
-    right: 0;
-    background-color: #333;
-    padding: 1rem;
-    border-radius: 8px;
-    gap: 1rem;
-    z-index: 10;
-  }
-
-  /* Show menu when open */
-  .nav-links.show {
-    display: flex; /* Makes links visible */
-  }
-
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
-
-  /* Hamburger Menu */
-  .hamburger-menu {
-    display: block; /* Ensure the hamburger icon shows on smaller screens */
-  }
-}
-
-/* Ensures desktop layout remains intact */
-@media (min-width: 769px) {
-  .hamburger-menu {
-    display: none; /* Hide hamburger menu on larger screens */
-  }
-
-  .nav-links {
-    display: flex; /* Show links in horizontal layout */
-  }
-}
-
-
-
 /* HAMBURGER MENU */
 
 #hamburger-nav {
@@ -136,6 +80,7 @@ a:hover {
 .hamburger-menu {
   position: relative;
   display: inline-block;
+  cursor: pointer;
 }
 
 .hamburger-icon {
@@ -144,7 +89,6 @@ a:hover {
   justify-content: space-between;
   height: 24px;
   width: 30px;
-  cursor: pointer;
 }
 
 .hamburger-icon span {
@@ -170,7 +114,7 @@ a:hover {
   padding: 10px;
   text-align: center;
   font-size: 1.5rem;
-  color:#ff9900;
+  color: #ff9900;
   text-decoration: none;
   transition: all 0.3 ease-in-out;
 }
@@ -240,23 +184,23 @@ section {
 .section__text {
   align-self: center;
   text-align: center;
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .section__text p {
   font-weight: 600;
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .section__text__p1 {
   text-align: center;
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .section__text__p2 {
   font-size: 1.75rem;
   margin-bottom: 1rem;
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .title {
@@ -271,7 +215,6 @@ section {
   margin-top: 1rem;
   gap: 1rem;
   color: #ffffff;
-
 }
 
 /* ICONS */
@@ -281,6 +224,7 @@ section {
   height: 2rem;
   fill: #ffffff;
 }
+
 #socials-container .icon {
   fill: #ff9900; /* Accent color for social media icons */
 }
@@ -324,7 +268,7 @@ section {
 }
 
 .btn-color-2 {
-  background: #ffffff;;
+  background: #ffffff;
 }
 
 .btn-color-2:hover {
@@ -345,20 +289,17 @@ section {
   gap: 2rem;
   margin-bottom: 2rem;
   margin-top: 2rem;
-  
 }
 
 .about-details-container {
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  
 }
 
 .about-containers,
 .about-details-container {
   display: flex;
- 
 }
 
 .about-pic {
@@ -372,7 +313,6 @@ section {
   font-size: 5rem;
   color: #ff9900;
   cursor: pointer;
-
 }
 
 .details-container {
@@ -389,8 +329,7 @@ section {
 .section-container {
   gap: 4rem;
   height: 80%;
-  color: black
-
+  color: black;
 }
 
 .section__pic-container {
@@ -400,128 +339,45 @@ section {
   color: rgb(53, 53, 53);
 }
 
-/* EXPERIENCE SECTION */
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  nav {
+    justify-content: space-between; /* Aligns logo and hamburger menu */
+  }
 
-#experience {
-  position: relative;
+  .nav-links {
+    display: none; /* Hide links by default */
+    flex-direction: column; /* Stack links vertically */
+    position: absolute;
+    top: 17vh; /* Adjust based on header height */
+    right: 0;
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 8px;
+    gap: 1rem;
+    z-index: 10;
+  }
+
+  .nav-links.show {
+    display: flex; /* Makes links visible */
+  }
+
+  .hamburger-menu {
+    display: block; /* Ensure hamburger icon is visible */
+  }
+
+  .nav-links a {
+    color: white;
+    font-size: 1.2rem;
+  }
 }
 
-.experience-sub-title {
-  color: rgb(85, 85, 85);
-  font-weight: 600;
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
-}
+@media (min-width: 769px) {
+  .hamburger-menu {
+    display: none; /* Hide hamburger menu */
+  }
 
-.experience-details-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.article-container {
-  display: flex;
-  text-align: initial;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 2.5rem;
-  justify-content: space-around;
-}
-
-article {
-  display: flex;
-  width: 10rem;
-  justify-content: space-around;
-  gap: 0.5rem;
-}
-
-article .icon {
-  cursor: default;
-}
-
-/* Footer Styling */
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px 0;
-  margin-top: 40px;
-}
-
-/* PROJECTS SECTION */
-
-#projects {
-  position: relative;
-}
-
-.color-container {
-  border-color: rgb(163, 163, 163);
-  background: rgb(250, 250, 250);
-}
-
-.project-img {
-  border-radius: 2rem;
-  width: 90%;
-  height: 90%;
-}
-
-.project-title {
-  margin: 1rem;
-  color: black;
-}
-
-.project-btn {
-  color: black;
-  border-color: rgb(163, 163, 163);
-}
-
-/* CONTACT */
-
-#contact {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 70vh;
-}
-
-.contact-info-upper-container {
-  display: flex;
-  justify-content: center;
-  border-radius: 2rem;
-  border: rgb(53, 53, 53) 0.1rem solid;
-  border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
-  margin: 2rem auto;
-  padding: 0.5rem;
-}
-
-.contact-info-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem;
-}
-
-.contact-info-container p {
-  font-size: larger;
-}
-
-.contact-icon {
-  cursor: default;
-}
-
-.email-icon {
-  height: 2.5rem;
-}
-
-/* FOOTER SECTION */
-
-footer {
-  height: 26vh;
-  margin: 0 1rem;
-}
-
-footer p {
-  text-align: center;
+  .nav-links {
+    display: flex; /* Desktop layout */
+  }
 }
