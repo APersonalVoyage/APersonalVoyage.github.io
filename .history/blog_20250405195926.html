@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - Abhishek Karkola</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="blog.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="blog.html" class="nav-link active">Blog</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="blog" class="blog-section-container">
+      <div class="blog-header">
+        <h1 class="title">Welcome to My Blog</h1>
+        <p class="section__text">Delve into thoughts, philosophies, and explorations on life, leadership, and beyond.</p>  
+      </div>
+      
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search articles...">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+      </div>
+
+      <div class="blog-containers">
+        <!-- Blog Post 1 -->
+        <article class="blog-details">
+          <div class="blog-image" style="background-image: url('assets/blog-leadership.jpg')"></div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> December 15, 2024</span>
+              <span><i class="far fa-clock"></i> 8 min read</span>
+            </div>
+            <h2 class="project-title">
+              <a href="blog_post_1.html" class="blog-link">Leadership, Morality, and the Struggle for Humanity</a>
+            </h2>
+            <p class="blog-summary">
+              From ancient kings to modern billionaires, leadership has shaped societies and determined the fates of millions. Yet, the question remains: what makes a leader just, and what happens when power is used as a means rather than a responsibility?
+            </p>
+            <a href="blog_post_1.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="tags">
+              <span class="tag">Leadership</span>
+              <span class="tag">Philosophy</span>
+              <span class="tag">Ethics</span>
+            </div>
+          </div>
+        </article>   
+        
+        <!-- Blog Post 2 -->
+        <article class="blog-details">
+          <div class="blog-image" style="background-image: url('assets/blog-india.jpg')"></div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> February 20, 2025</span>
+              <span><i class="far fa-clock"></i> 6 min read</span>
+            </div>
+            <h2 class="project-title">
+              <a href="blog_post_2.html" class="blog-link">Why Does India Struggle with Civic Sense?</a>
+            </h2>
+            <p class="blog-summary">
+              Civic sense plays a crucial role in shaping a society, yet in India, a lack of it is evident everywhere—from littered streets to vandalized public property. This article delves into the historical and cultural roots of this issue.
+            </p>
+            <a href="blog_post_2.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="tags">
+              <span class="tag">India</span>
+              <span class="tag">Society</span>
+              <span class="tag">Culture</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      
+      <div class="newsletter-container">
+        <h3>Subscribe to my newsletter</h3>
+        <p>Get notified when I publish new articles</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+      <p>&copy; 2024 Abhishek Karkola. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- Particles JS Background -->
+  <div id="particles-js"></div>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 40, density: { enable: true, value_area: 1000 } },
+        color: { value: "#ff9900" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3, random: false },
+        size: { value: 3, random: true },
+        line_linked: { enable: true, distance: 150, color: "#ff9900", opacity: 0.2, width: 1 },
+        move: { enable: true, speed: 1.5, direction: "none", random: false, straight: false, out_mode: "out" }
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: { 
+          onhover: { enable: true, mode: "repulse" }, 
+          onclick: { enable: true, mode: "push" } 
+        },
+        modes: {
+          repulse: { distance: 80, duration: 0.4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
