@@ -40,6 +40,96 @@
         z-index: -1;
       }
       
+      /* Profile section layout */
+      .profile-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+        width: 100%;
+        max-width: 1200px;
+        margin: 6rem auto 3rem;
+        padding: 0;
+      }
+      
+      .profile-left {
+        flex: 1;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .profile-right {
+        flex: 1;
+        width: 50%;
+        text-align: left;
+        padding-right: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      
+      .profile-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .intro-text {
+        font-size: 1.2rem;
+        color: var(--text-color);
+        margin: 0;
+      }
+      
+      .title {
+        font-size: 3rem;
+        line-height: 1.2;
+        margin: 0;
+      }
+      
+      .job-title {
+        font-size: 1.5rem;
+        color: var(--secondary-color);
+        margin: 0;
+      }
+      
+      .profile-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      
+      .btn-container {
+        display: flex;
+        gap: 1rem;
+      }
+      
+      #socials-container {
+        display: flex;
+        gap: 1.5rem;
+      }
+      
+      #socials-container .icon {
+        height: 2rem;
+        width: 2rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      #socials-container .icon:hover {
+        transform: translateY(-5px);
+      }
+      
+      .section__pic {
+        width: 400px;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid var(--primary-color);
+        box-shadow: 0 0 20px rgba(76, 201, 240, 0.4);
+      }
+      
       /* Title styling with physics theme */
       .title {
         background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
@@ -64,6 +154,18 @@
       
       .btn-color-2:hover {
         background: var(--primary-color);
+      }
+      
+      .btn.btn-color-1:hover {
+        background: #d91a6e;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(247, 37, 133, 0.3);
+      }
+      
+      .btn.btn-color-2:hover {
+        background: var(--primary-color);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(110, 68, 255, 0.3);
       }
       
       /* Card styling */
@@ -170,364 +272,1031 @@
         0%, 100% { opacity: 0.2; }
         50% { opacity: 1; }
       }
+      
+      /* Media query for profile section responsiveness */
+      @media screen and (max-width: 768px) {
+        .profile-container {
+        flex-direction: column;
+          text-align: center;
+          gap: 2rem;
+          margin-top: 3rem;
+        }
+        
+        .profile-left, .profile-right {
+          width: 100%;
+        }
+        
+        .profile-right {
+          text-align: center;
+          padding-right: 0;
+        align-items: center;
+        }
+        
+        .profile-text {
+          align-items: center;
+        }
+        
+        .intro-text, .job-title, .title {
+          text-align: center;
+        }
+        
+        .profile-actions {
+          align-items: center;
+        }
+        
+        .btn-container {
+        justify-content: center;
+        }
+        
+        #socials-container {
+          justify-content: center;
+        }
+        
+        .section__pic {
+          width: 250px;
+          height: 250px;
+        }
+      }
+      
+      .btn {
+        padding: 0.8rem 1.5rem;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+      
+      /* Mobile specific fixes for the inline styles we added */
+      @media screen and (max-width: 768px) {
+        #profile .section-container {
+          flex-direction: column !important;
+        }
+        
+        #profile .profile-left,
+        #profile .profile-right {
+          width: 100% !important;
+        }
+        
+        #profile .profile-right {
+          padding-left: 0 !important;
+          margin-top: 2rem !important;
+        }
+        
+        #profile .section__pic {
+          width: 250px !important;
+          height: 250px !important;
+        }
+      }
+      
+      /* Nav link hover effects */
+      #desktop-nav .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--secondary-color);
+        transition: width 0.3s ease;
+      }
+      
+      #desktop-nav .nav-links a:hover {
+        color: var(--secondary-color);
+      }
+      
+      #desktop-nav .nav-links a:hover::after {
+        width: 100%;
+      }
+      
+      #hamburger-nav .menu-links a:hover {
+        background-color: rgba(76, 201, 240, 0.1);
+        padding-left: 30px;
+      }
+      
+      .menu-links.open {
+        max-height: 300px !important;
+      }
+      
+      .hamburger-icon.open span:first-child {
+        transform: rotate(45deg) translate(5px, 5px) !important;
+      }
+      
+      .hamburger-icon.open span:nth-child(2) {
+        opacity: 0 !important;
+      }
+      
+      .hamburger-icon.open span:last-child {
+        transform: rotate(-45deg) translate(5px, -5px) !important;
+      }
+      
+      /* Navigation responsiveness */
+      @media screen and (max-width: 992px) {
+        #desktop-nav {
+          display: none !important;
+        }
+        
+        #hamburger-nav {
+          display: flex !important;
+        }
+      }
+      
+      /* Logo animation styles */
+      .logo {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .logo::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          to bottom right,
+          rgba(76, 201, 240, 0) 0%,
+          rgba(76, 201, 240, 0) 40%,
+          rgba(76, 201, 240, 0.3) 50%,
+          rgba(76, 201, 240, 0) 60%,
+          rgba(76, 201, 240, 0) 100%
+        );
+        transform: rotate(30deg);
+        animation: shimmer 6s infinite;
+        z-index: -1;
+      }
+      
+      @keyframes shimmer {
+        0% { transform: translateX(-100%) rotate(30deg); }
+        100% { transform: translateX(100%) rotate(30deg); }
+      }
+      
+      @keyframes pulse {
+        0%, 100% { opacity: 1; text-shadow: 0 0 10px rgba(76, 201, 240, 0.5); }
+        50% { opacity: 0.8; text-shadow: 0 0 20px rgba(110, 68, 255, 0.7), 0 0 30px rgba(247, 37, 133, 0.5); }
+      }
+      
+      @keyframes starryText {
+        0%, 100% { background-position: left top; }
+        50% { background-position: right bottom; }
+      }
+      
+      /* Apply animations to the logo text */
+      .logo-text {
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: starryText 10s ease infinite;
+        transition: all 0.5s ease;
+        font-weight: bold;
+        display: inline-block;
+        transform-origin: center;
+        padding: 0 5px;
+        margin: 0 10px;
+        will-change: transform;
+      }
+      
+      .logo-text:hover {
+        animation-play-state: paused;
+        transform: scale(1.05);
+      }
+      
+      /* Container for logo to ensure it doesn't get cut off */
+      .logo {
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        font-size: 2rem;
+      }
+      
+      /* Different size for mobile menu */
+      #hamburger-nav .logo {
+        font-size: 1.8rem;
+      }
+      
+      /* Enhanced Navbar Animations */
+      .animated-navbar {
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+        animation: navGlow 8s infinite alternate;
+      }
+      
+      @keyframes navGlow {
+        0% { box-shadow: 0 5px 15px rgba(110, 68, 255, 0.3); }
+        50% { box-shadow: 0 5px 25px rgba(76, 201, 240, 0.4); }
+        100% { box-shadow: 0 5px 15px rgba(247, 37, 133, 0.3); }
+      }
+      
+      .animated-navbar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, 
+          transparent 0%, 
+          var(--accent-color) 25%, 
+          var(--primary-color) 50%, 
+          var(--secondary-color) 75%, 
+          transparent 100%);
+        animation: borderFlow 8s infinite linear;
+        opacity: 0.7;
+      }
+      
+      @keyframes borderFlow {
+        0% { background-position: 0% center; }
+        100% { background-position: 200% center; }
+      }
+      
+      /* Cosmic particles in navbar */
+      .nav-particle {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background-color: white;
+        border-radius: 50%;
+        opacity: 0;
+        z-index: 1;
+        animation: floatParticle var(--duration, 15s) infinite ease-in-out;
+        animation-delay: var(--delay, 0s);
+      }
+      
+      @keyframes floatParticle {
+        0% { 
+          opacity: 0;
+          transform: translateY(10px) translateX(0);
+        }
+        10% { 
+          opacity: var(--opacity, 0.7);
+        }
+        90% { 
+          opacity: var(--opacity, 0.7);
+        }
+        100% { 
+          opacity: 0;
+          transform: translateY(-40px) translateX(var(--x-offset, 20px));
+        }
+      }
+      
+      /* Enhanced nav links animation */
+      .nav-links li a {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.4s ease;
+      }
+      
+      .nav-links li a::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+        opacity: 0.8;
+      }
+      
+      .nav-links li a:hover::before {
+        transform: scaleX(1);
+      }
+      
+      .nav-links li a:hover {
+        color: var(--text-color);
+        text-shadow: 0 0 8px var(--primary-color), 0 0 15px var(--secondary-color);
+        transform: translateY(-2px);
+      }
+      
+      /* Hamburger menu animations */
+      .hamburger-icon span {
+        transform-origin: center;
+        transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+      }
+      
+      .hamburger-icon:hover span:nth-child(1) {
+        transform: scaleX(0.8) translateY(-1px);
+        background-color: var(--accent-color);
+      }
+      
+      .hamburger-icon:hover span:nth-child(2) {
+        transform: scaleX(1.1);
+        background-color: var(--primary-color);
+      }
+      
+      .hamburger-icon:hover span:nth-child(3) {
+        transform: scaleX(0.8) translateY(1px);
+        background-color: var(--secondary-color);
+      }
+      
+      /* Mobile menu item animations */
+      .menu-links a {
+        position: relative;
+        transition: all 0.3s ease;
+        transform: translateX(-20px);
+        opacity: 0;
+      }
+      
+      .menu-links.open a {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      
+      .menu-links.open a:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      
+      .menu-links.open a:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+      
+      .menu-links.open a:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+      
+      .menu-links.open a:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+      
+      .menu-links.open a:nth-child(5) {
+        transition-delay: 0.5s;
+      }
+      
+      .menu-links a:hover {
+        background: linear-gradient(90deg, 
+          rgba(110, 68, 255, 0.1), 
+          rgba(76, 201, 240, 0.1));
+        padding-left: 35px !important;
+      }
+      
+      .menu-links a::after {
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        width: 0;
+        height: 0;
+        background: var(--accent-color);
+        border-radius: 50%;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
+        opacity: 0;
+      }
+      
+      .menu-links a:hover::after {
+        width: 8px;
+        height: 8px;
+        opacity: 1;
+        box-shadow: 0 0 10px var(--accent-color);
+      }
     </style>
   </head>
   <body>
     <div class="scroll-progress-container">
       <div class="scroll-progress-bar"></div>
     </div>
-    <nav id="desktop-nav">
-      <div class="logo">Space & Waves</div>
+    <nav id="desktop-nav" class="animated-navbar" style="display: flex; justify-content: space-between; align-items: center; height: 80px; background: rgba(10, 10, 35, 0.85); backdrop-filter: blur(10px); position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 0 4rem;">
+      <div class="nav-particle" style="--duration: 12s; --delay: 0s; --opacity: 0.8; --x-offset: 15px; top: 20px; left: 15%;"></div>
+      <div class="nav-particle" style="--duration: 15s; --delay: 2s; --opacity: 0.6; --x-offset: -10px; top: 50px; left: 25%;"></div>
+      <div class="nav-particle" style="--duration: 20s; --delay: 5s; --opacity: 0.7; --x-offset: 25px; top: 30px; left: 60%;"></div>
+      <div class="nav-particle" style="--duration: 18s; --delay: 7s; --opacity: 0.5; --x-offset: -20px; top: 15px; left: 80%;"></div>
+      <div class="nav-particle" style="--duration: 16s; --delay: 10s; --opacity: 0.6; --x-offset: 5px; top: 60px; left: 45%;"></div>
+      <div class="logo">
+        <span class="logo-text">A Personal Voyage</span>
+      </div>
       <div>
-        <ul class="nav-links">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#research">Research</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
+        <ul class="nav-links" style="display: flex; gap: 2.5rem; list-style: none; margin: 0; padding: 0; z-index: 2; position: relative;">
+          <li><a href="index.html#about" style="color: white; text-decoration: none; font-size: 1.1rem; position: relative; transition: all 0.3s ease;">About</a></li>
+          <li><a href="index.html#research" style="color: white; text-decoration: none; font-size: 1.1rem; position: relative; transition: all 0.3s ease;">Research</a></li>
+          <li><a href="blog.html" style="color: white; text-decoration: none; font-size: 1.1rem; position: relative; transition: all 0.3s ease;">Blog</a></li>
+          <li><a href="index.html#projects" style="color: white; text-decoration: none; font-size: 1.1rem; position: relative; transition: all 0.3s ease;">Projects</a></li>
+          <li><a href="index.html#contact" style="color: white; text-decoration: none; font-size: 1.1rem; position: relative; transition: all 0.3s ease;">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Abhishek Karkola</div>
+    <nav id="hamburger-nav" class="animated-navbar" style="display: none; justify-content: space-between; align-items: center; height: 80px; background: rgba(10, 10, 35, 0.85); backdrop-filter: blur(10px); position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 0 2rem;">
+      <div class="nav-particle" style="--duration: 14s; --delay: 1s; --opacity: 0.7; --x-offset: 10px; top: 25px; left: 20%;"></div>
+      <div class="nav-particle" style="--duration: 17s; --delay: 4s; --opacity: 0.5; --x-offset: -15px; top: 40px; left: 70%;"></div>
+      <div class="logo">
+        <span class="logo-text">A Personal Voyage</span>
+      </div>
       <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="hamburger-icon" onclick="toggleMenu()" style="cursor: pointer; display: flex; flex-direction: column; height: 24px; width: 30px; justify-content: space-between;">
+          <span style="display: block; height: 2px; width: 100%; background-color: var(--secondary-color); transition: all 0.3s ease;"></span>
+          <span style="display: block; height: 2px; width: 100%; background-color: var(--secondary-color); transition: all 0.3s ease;"></span>
+          <span style="display: block; height: 2px; width: 100%; background-color: var(--secondary-color); transition: all 0.3s ease;"></span>
         </div>
-        <div class="menu-links">
-          <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="index.html#research" onclick="toggleMenu()">Research</a></li>
-          <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
-          <li><a href="index.html#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+        <div class="menu-links" style="position: absolute; top: 80px; right: 0; background: rgba(10, 10, 35, 0.95); backdrop-filter: blur(10px); width: 250px; max-height: 0; overflow: hidden; transition: all 0.3s ease; border-radius: 0 0 10px 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+          <li style="list-style: none;"><a href="index.html#about" onclick="toggleMenu()" style="display: block; padding: 15px 25px; color: white; text-decoration: none; font-size: 1.1rem; transition: all 0.3s ease;">About</a></li>
+          <li style="list-style: none;"><a href="index.html#research" onclick="toggleMenu()" style="display: block; padding: 15px 25px; color: white; text-decoration: none; font-size: 1.1rem; transition: all 0.3s ease;">Research</a></li>
+          <li style="list-style: none;"><a href="blog.html" onclick="toggleMenu()" style="display: block; padding: 15px 25px; color: white; text-decoration: none; font-size: 1.1rem; transition: all 0.3s ease;">Blog</a></li>
+          <li style="list-style: none;"><a href="index.html#projects" onclick="toggleMenu()" style="display: block; padding: 15px 25px; color: white; text-decoration: none; font-size: 1.1rem; transition: all 0.3s ease;">Projects</a></li>
+          <li style="list-style: none;"><a href="index.html#contact" onclick="toggleMenu()" style="display: block; padding: 15px 25px; color: white; text-decoration: none; font-size: 1.1rem; transition: all 0.3s ease;">Contact</a></li>
         </div>
       </div>
     </nav>
     
     <!-- Hero section with space physics theme -->
-    <section id="profile" style="text-align: center;">
-        <div class="section__pic-container gw-animate">
-            <img src="./assets/My_profile-fotor-20230824122059.png" alt="profile" class="section__pic">
+    <section id="profile" style="padding: 6rem 2rem; position: relative;">
+        <div class="section-container profile-container" style="display: flex; flex-direction: row; max-width: 1200px; margin: 0 auto; margin-bottom: 2rem;">
+            <div class="profile-left" style="flex: 1; display: flex; justify-content: center; align-items: center; width: 50%;">
+                <img src="./assets/My_profile-fotor-20230824122059.png" alt="profile" class="section__pic" style="width: 400px; height: 400px; object-fit: cover; border-radius: 50%; border: 3px solid var(--primary-color);">
         </div>
-        <div class="section_text" style="margin-top: 200px;">
-            <p class="section__text__p1">Hello, I'm</p>
-            <h1 class="title">Abhishek Karkola</h1>
-            <p class="section__text__p2">Gravitational Wave Physicist</p>
-            <div class="btn-container">
-                <button class="btn btn-color-2" onclick="window.open('./assets/Abhishek_CV.pdf')">
+            <div class="profile-right" style="flex: 1; display: flex; flex-direction: column; width: 50%; padding-left: 2rem; text-align: center; justify-content: center; align-items: center; gap: 1.5rem;">
+                <p style="margin: 0; font-size: 1.2rem; font-weight: 500; color: white; text-align: center;">Hello, I'm</p>
+                <h1 class="title" style="margin: 0; text-align: center; font-size: 3rem; line-height: 1.2;">Abhishek Karkola</h1>
+                <p style="margin: 0 0 1rem 0; font-size: 1.5rem; font-weight: 500; color: var(--secondary-color); text-align: center;">Gravitational Wave Physicist</p>
+                <div class="btn-container" style="margin: 0; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn btn-color-2" style="padding: 0.8rem 1.5rem; font-size: 1rem; border-radius: 30px; min-width: 160px; white-space: nowrap;" onclick="window.open('./assets/Abhishek_CV.pdf', '_blank')">
                   Download CV
                 </button>
-                <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                    <button class="btn btn-color-1" style="padding: 0.8rem 1.5rem; font-size: 1rem; border-radius: 30px; min-width: 160px; white-space: nowrap;" onclick="location.href='./#contact'">
                   Contact Info
                 </button>
             </div>
-            <div id="socials-container">
-                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://linkedin.com/'"/>
-                <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/APersonalVoyage'"/>
-                <img src="./assets/instagram.png" alt="My instagram profile" class="icon" onclick="location.href='https://www.instagram.com/apersonalvoyage/'"/>
-                <img src="./assets/twitter.png" alt="My twitter profile" class="icon" onclick="location.href='https://twitter.com/APersonalVoyage'"/>
+                <div id="socials-container" style="margin: 0; display: flex; gap: 1.5rem; justify-content: center;">
+                    <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" style="width: 2rem; height: 2rem;" onclick="window.open('https://linkedin.com/', '_blank')"/>
+                    <img src="./assets/github.png" alt="My Github profile" class="icon" style="width: 2rem; height: 2rem;" onclick="window.open('https://github.com/APersonalVoyage', '_blank')"/>
+                    <img src="./assets/instagram.png" alt="My instagram profile" class="icon" style="width: 2rem; height: 2rem;" onclick="window.open('https://www.instagram.com/apersonalvoyage/', '_blank')"/>
+                    <img src="./assets/twitter.png" alt="My twitter profile" class="icon" style="width: 2rem; height: 2rem;" onclick="window.open('https://twitter.com/APersonalVoyage', '_blank')"/>
             </div>
         </div>
+        </div>
+        <div style="position: absolute; bottom: 0; left: 20%; width: 60%; height: 1px; background: linear-gradient(90deg, transparent, var(--primary-color), transparent);"></div>
     </section>
     
-    <!-- About section highlighting gravitational physics background -->
-    <section id="about">
-        <p class="section__text__p1">My Background</p>
-        <h1 class="title">About Me</h1>
-        <div class="section-container">
-            <div class="section__pic-container" style="margin-top: 50px">
-                <img src="./assets/Profile_Pic2.JPG" alt="Profile picture" class="about-pic"/>
+    <!-- About section with fresh implementation using flexbox and grid -->
+    <section id="about" style="padding: 6rem 2rem; position: relative;">
+        <h1 class="title" style="text-align: center; margin-bottom: 2rem; font-size: 1.9rem;">About Me</h1>
+        
+        <div class="about-content" style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto; position: relative; margin-bottom: 2rem;">
+            <!-- Text content -->
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; text-align: justify;">I'm a <strong>Gravitational Wave Physicist</strong> with a passion for exploring the most fascinating forces in our universe. Currently working as a Data Automation Engineer at Legal and General, I bring my analytical mindset from physics to solve complex data challenges.</p>
+                
+                <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; text-align: justify;">My academic journey includes an <strong>MSc in Gravitational Physics from Cardiff University</strong>, awarded through a merit-based scholarship. My studies focused on the detection and analysis of gravitational waves—ripples in spacetime caused by violent cosmic events like black hole mergers and neutron star collisions.</p>
+                
+                <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; text-align: justify;">During my time at Cardiff, I conducted research on <strong>Gravitational Wave Constraints on Modified Gravity</strong> with Dr. Ian Harrison, exploring how these cosmic messengers can help us test Einstein's theory of General Relativity and potentially discover new physics. I also worked on <strong>Parameter Estimation of Gravitational-wave Sources</strong> with Dr. Vivian Raymond, developing techniques to extract physical properties of distant cosmic events from their gravitational wave signals.</p>
+                
+                <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; text-align: justify;">My fascination with the cosmos extends to other areas of theoretical physics, including <strong>General Relativity, Cosmology, and Numerical Relativity</strong>. My expertise in tensor mathematics and linear algebra forms the foundation of my approach to understanding spacetime.</p>
+                
+                <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; text-align: justify;">Beyond research, I've contributed as a Teaching Assistant in Computational Physics, sharing my knowledge of Python and scientific computing. My technical toolkit includes expertise in high-performance computing environments necessary for gravitational wave data analysis.</p>
+                
+                <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; text-align: justify;">I'm passionate about communicating complex physics concepts and sharing my insights about the universe through my blog. Feel free to connect if you'd like to discuss anything from black holes to quantum gravity—I'm always eager to explore the mysteries of our cosmos!</p>
             </div>
             
-            <div class="text-container" style="margin-top: 30px; text-align: justify;">
-                <p>I'm a <strong>Gravitational Wave Physicist</strong> with a passion for exploring the most fascinating forces in our universe. Currently working as a Data Automation Engineer at Legal and General, I bring my analytical mindset from physics to solve complex data challenges.</p>
-                
-                <p>My academic journey includes an <strong>MSc in Gravitational Physics from Cardiff University</strong>, awarded through a merit-based scholarship. My studies focused on the detection and analysis of gravitational waves—ripples in spacetime caused by violent cosmic events like black hole mergers and neutron star collisions.</p>
-                
-                <p>During my time at Cardiff, I conducted research on <strong>Gravitational Wave Constraints on Modified Gravity</strong> with Dr. Ian Harrison, exploring how these cosmic messengers can help us test Einstein's theory of General Relativity and potentially discover new physics. I also worked on <strong>Parameter Estimation of Gravitational-wave Sources</strong> with Dr. Vivian Raymond, developing techniques to extract physical properties of distant cosmic events from their gravitational wave signals.</p>
-                
-                <p>My fascination with the cosmos extends to other areas of theoretical physics, including <strong>General Relativity, Cosmology, and Numerical Relativity</strong>. My expertise in tensor mathematics and linear algebra forms the foundation of my approach to understanding spacetime.</p>
-                
-                <p>Beyond research, I've contributed as a Teaching Assistant in Computational Physics, sharing my knowledge of Python and scientific computing. My technical toolkit includes expertise in high-performance computing environments necessary for gravitational wave data analysis.</p>
-                
-                <p>I'm passionate about communicating complex physics concepts and sharing my insights about the universe through my blog. Feel free to connect if you'd like to discuss anything from black holes to quantum gravity—I'm always eager to explore the mysteries of our cosmos!</p>
+            <!-- Image container -->
+            <div style="display: flex; align-items: flex-start; justify-content: center;">
+                <div style="width: 100%; height: auto; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 30px rgba(110, 68, 255, 0.3);">
+                    <img src="./assets/Profile_Pic2.JPG" alt="Profile picture" style="width: 100%; height: auto; display: block; object-fit: cover;">
             </div>
         </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#research'"/>
+        </div>
+        <div style="position: absolute; bottom: 0; left: 20%; width: 60%; height: 1px; background: linear-gradient(90deg, transparent, var(--primary-color), transparent);"></div>
     </section>
     
-    <!-- Research section replacing Experience -->
-    <section id="research">
-        <p class="section__text__p1">My Areas of Focus</p>
-        <h1 class="title">Research Interests</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Gravitational Physics</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                            <div>
-                                <h3>General Relativity</h3>
-                                <p>Advanced</p>
+    <!-- Research section with clean flex structure -->
+    <section id="research" style="padding: 6rem 2rem; position: relative;">
+        <h1 class="title" style="text-align: center; margin-bottom: 2rem; font-size: 1.9rem;">Research Interests</h1>
+        
+        <div style="max-width: 1200px; margin: 0 auto; margin-bottom: 2rem;">
+            <!-- Cards container with flexbox -->
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+                
+                <!-- Card 1: Gravitational Physics -->
+                <div style="flex: 1; min-width: 300px; flex-basis: calc(33.333% - 2rem); background: rgba(25, 25, 50, 0.7); border-radius: 12px; padding: 2rem; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); backdrop-filter: blur(8px); border: 1px solid rgba(110, 68, 255, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <h2 style="color: var(--secondary-color); text-align: center; margin-bottom: 1.5rem; font-size: 1.4rem;">Gravitational Physics</h2>
+                    
+                    <!-- Skills list -->
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <!-- Skill item -->
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                <img src="./assets/checkmark.png" alt="Checkmark" style="width: 20px; height: 20px;">
                             </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
                             <div>
-                                <h3>Tensor Mathematics</h3>
-                                <p>Advanced</p>
+                                <h3 style="margin: 0; font-size: 1rem;">General Relativity</h3>
+                                <p style="margin: 0; color: #aaa; font-size: 0.85rem;">Advanced</p>
                             </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                <img src="./assets/checkmark.png" alt="Checkmark" style="width: 20px; height: 20px;">
+                            </div>
                             <div>
-                                <h3>Modified Gravity</h3>
-                                <p>Experienced</p>
+                                <h3 style="margin: 0; font-size: 1rem;">Tensor Mathematics</h3>
+                                <p style="margin: 0; color: #aaa; font-size: 0.85rem;">Advanced</p>
                             </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                <img src="./assets/checkmark.png" alt="Checkmark" style="width: 20px; height: 20px;">
+                            </div>
                             <div>
-                                <h3>Wave Mechanics</h3>
-                                <p>Advanced</p>
+                                <h3 style="margin: 0; font-size: 1rem;">Modified Gravity</h3>
+                                <p style="margin: 0; color: #aaa; font-size: 0.85rem;">Experienced</p>
                             </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                <img src="./assets/checkmark.png" alt="Checkmark" style="width: 20px; height: 20px;">
+                            </div>
                             <div>
-                                <h3>Numerical Relativity</h3>
-                                <p>Intermediate</p>
+                                <h3 style="margin: 0; font-size: 1rem;">Wave Mechanics</h3>
+                                <p style="margin: 0; color: #aaa; font-size: 0.85rem;">Advanced</p>
                             </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                <img src="./assets/checkmark.png" alt="Checkmark" style="width: 20px; height: 20px;">
+                            </div>
                             <div>
-                                <h3>GW Astrophysics</h3>
-                                <p>Advanced</p>
+                                <h3 style="margin: 0; font-size: 1rem;">Numerical Relativity</h3>
+                                <p style="margin: 0; color: #aaa; font-size: 0.85rem;">Intermediate</p>
                             </div>
-                        </article>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                <img src="./assets/checkmark.png" alt="Checkmark" style="width: 20px; height: 20px;">
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1rem;">GW Astrophysics</h3>
+                                <p style="margin: 0; color: #aaa; font-size: 0.85rem;">Advanced</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Cosmology & Astrophysics</h2>
-                    <div class="article-container">
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
-                            <div>
-                                <h3>Black Hole Physics</h3>
-                                <p>Experienced</p>
+                <!-- Card 2: Cosmology & Astrophysics -->
+                <div style="flex: 1; min-width: 300px; flex-basis: calc(33.333% - 2rem); background: rgba(25, 25, 50, 0.7); border-radius: 12px; padding: 2rem; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); backdrop-filter: blur(8px); border: 1px solid rgba(110, 68, 255, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <h2 style="color: var(--secondary-color); text-align: center; margin-bottom: 1.5rem; font-size: 1.4rem;">Cosmology & Astrophysics</h2>
+                    
+                    <!-- Skills list -->
+                    <div style="display: flex; flex-direction: column; gap: 1rem;">
+                        <!-- Skill item -->
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                <img src="./assets/checkmark.png" alt="Checkmark" style="width: 20px; height: 20px;">
                             </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
                             <div>
-                                <h3>Compact Binaries</h3>
-                                <p>Advanced</p>
+                                <h3 style="margin: 0; font-size: 1rem;">Black Hole Physics</h3>
+                                <p style="margin: 0; color: #aaa; font-size: 0.85rem;">Experienced</p>
                             </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                <img src="./assets/checkmark.png" alt="Checkmark" style="width: 20px; height: 20px;">
+                            </div>
                             <div>
-                                <h3>Cosmological Models</h3>
-                                <p>Intermediate</p>
+                                <h3 style="margin: 0; font-size: 1rem;">Compact Binaries</h3>
+                                <p style="margin: 0; color: #aaa; font-size: 0.85rem;">Advanced</p>
                             </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                <img src="./assets/checkmark.png" alt="Checkmark" style="width: 20px; height: 20px;">
+                            </div>
                             <div>
-                                <h3>Dark Energy</h3>
-                                <p>Intermediate</p>
+                                <h3 style="margin: 0; font-size: 1rem;">Cosmological Models</h3>
+                                <p style="margin: 0; color: #aaa; font-size: 0.85rem;">Intermediate</p>
                             </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                <img src="./assets/checkmark.png" alt="Checkmark" style="width: 20px; height: 20px;">
+                            </div>
                             <div>
-                                <h3>Neutron Stars</h3>
-                                <p>Intermediate</p>
+                                <h3 style="margin: 0; font-size: 1rem;">Dark Energy</h3>
+                                <p style="margin: 0; color: #aaa; font-size: 0.85rem;">Intermediate</p>
                             </div>
-                        </article>
-                        <article>
-                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                <img src="./assets/checkmark.png" alt="Checkmark" style="width: 20px; height: 20px;">
+                            </div>
                             <div>
-                                <h3>Early Universe</h3>
-                                <p>Basic</p>
+                                <h3 style="margin: 0; font-size: 1rem;">Neutron Stars</h3>
+                                <p style="margin: 0; color: #aaa; font-size: 0.85rem;">Intermediate</p>
                             </div>
-                        </article>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div style="min-width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;">
+                                <img src="./assets/checkmark.png" alt="Checkmark" style="width: 20px; height: 20px;">
+                            </div>
+                            <div>
+                                <h3 style="margin: 0; font-size: 1rem;">Early Universe</h3>
+                                <p style="margin: 0; color: #aaa; font-size: 0.85rem;">Basic</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="details-container">
-                    <h2 class="experience-sub-title">Technical Skills</h2>
-                    <div class="skills-container">
-                        <div class="skill">
-                            <span class="skill-name">Python Scientific Stack</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 95%;"></div>
+                <!-- Card 3: Technical Skills -->
+                <div style="flex: 1; min-width: 300px; flex-basis: calc(33.333% - 2rem); background: rgba(25, 25, 50, 0.7); border-radius: 12px; padding: 2rem; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); backdrop-filter: blur(8px); border: 1px solid rgba(110, 68, 255, 0.2); transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <h2 style="color: var(--secondary-color); text-align: center; margin-bottom: 1.5rem; font-size: 1.4rem;">Technical Skills</h2>
+                    
+                    <!-- Skills list with progress bars -->
+                    <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+                        
+                        <!-- Skill with bar -->
+                        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="font-size: 0.95rem;">Python Scientific Stack</span>
+                                <span style="font-size: 0.85rem; color: #aaa;">95%</span>
+                            </div>
+                            <div style="height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; width: 95%; background: linear-gradient(90deg, var(--secondary-color), var(--primary-color)); border-radius: 4px;"></div>
+                        </div>
+                            </div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="font-size: 0.95rem;">High Performance Computing</span>
+                                <span style="font-size: 0.85rem; color: #aaa;">85%</span>
+                        </div>
+                            <div style="height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; width: 85%; background: linear-gradient(90deg, var(--secondary-color), var(--primary-color)); border-radius: 4px;"></div>
                             </div>
                         </div>
-                        <div class="skill">
-                            <span class="skill-name">High Performance Computing</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 85%;"></div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="font-size: 0.95rem;">LIGO/Virgo Data Analysis</span>
+                                <span style="font-size: 0.85rem; color: #aaa;">90%</span>
                             </div>
+                            <div style="height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; width: 90%; background: linear-gradient(90deg, var(--secondary-color), var(--primary-color)); border-radius: 4px;"></div>
                         </div>
-                        <div class="skill">
-                            <span class="skill-name">LIGO/Virgo Data Analysis</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 90%;"></div>
+                    </div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="font-size: 0.95rem;">Numerical Simulations</span>
+                                <span style="font-size: 0.85rem; color: #aaa;">80%</span>
+                </div>
+                            <div style="height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; width: 80%; background: linear-gradient(90deg, var(--secondary-color), var(--primary-color)); border-radius: 4px;"></div>
+            </div>
+        </div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="font-size: 0.95rem;">Statistical Analysis</span>
+                                <span style="font-size: 0.85rem; color: #aaa;">90%</span>
                             </div>
-                        </div>
-                        <div class="skill">
-                            <span class="skill-name">Numerical Simulations</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 80%;"></div>
-                            </div>
-                        </div>
-                        <div class="skill">
-                            <span class="skill-name">Statistical Analysis</span>
-                            <div class="skill-bar">
-                                <div class="skill-level" style="width: 90%;"></div>
+                            <div style="height: 8px; background: rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden;">
+                                <div style="height: 100%; width: 90%; background: linear-gradient(90deg, var(--secondary-color), var(--primary-color)); border-radius: 4px;"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'"/>
+        <div style="position: absolute; bottom: 0; left: 20%; width: 60%; height: 1px; background: linear-gradient(90deg, transparent, var(--primary-color), transparent);"></div>
     </section>
     
     <!-- Projects section with focus on GW Physics -->
-    <section id="projects">
-        <p class="section__text__p1">My Research Work</p>
-        <h1 class="title">Physics Projects</h1>
-        <div class="experience-details-container">
-            <div class="about-containers">
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/10-Figure2-1.png" alt="Project 1" class="project-img"/>
+    <section id="projects" style="padding: 6rem 2rem; position: relative;">
+        <h1 class="title" style="text-align: center; margin-bottom: 2rem; font-size: 1.9rem;">Physics Projects</h1>
+        <div class="projects-container" style="max-width: 1200px; margin: 0 auto; margin-bottom: 2rem;">
+            <!-- Modern CSS Grid layout for projects -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem;">
+                
+                <!-- Project Card 1 -->
+                <div style="background: rgba(25, 25, 50, 0.7); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); backdrop-filter: blur(8px); border: 1px solid rgba(110, 68, 255, 0.2); height: 100%; display: flex; flex-direction: column;">
+                    <div style="overflow: hidden; height: 180px; position: relative;">
+                        <img src="./assets/10-Figure2-1.png" alt="Project 1" style="width: 100%; height: 100%; object-fit: cover;"/>
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(10, 10, 35, 0.7));"></div>
                     </div>
-                    <h2 class="experience-sub-title project-title">Updating Gravitational Wave Constraints on Modified Gravity</h2>
-                    <p style="padding: 0 15px; margin-bottom: 15px; font-size: 0.9rem;">
-                      Investigated how gravitational wave observations can test and constrain modifications to Einstein's theory of General Relativity, potentially revealing new physics at cosmological scales.
-                    </p>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/APersonalVoyage/MSc_Thesis'">
-                          Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/APersonalVoyage/MSc_Thesis/blob/main/Abhishek_Msc_Dissertation%20.pdf'">
-                          Thesis
-                        </button>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                        <h3 style="color: var(--secondary-color); margin: 0 0 1rem 0; font-size: 1.2rem;">Gravitational Wave Constraints on Modified Gravity</h3>
+                        <p style="margin: 0 0 1.5rem 0; font-size: 0.9rem; line-height: 1.5; flex-grow: 1;">
+                            Investigated how gravitational wave observations can test and constrain modifications to Einstein's theory of General Relativity, potentially revealing new physics at cosmological scales.
+                        </p>
+                        <div style="display: flex; gap: 1rem; margin-top: auto;">
+                            <a href="https://github.com/APersonalVoyage/MSc_Thesis" target="_blank" style="flex: 1; text-align: center; padding: 0.6rem 0; background: transparent; border: 2px solid var(--primary-color); color: white; text-decoration: none; border-radius: 30px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.backgroundColor='var(--primary-color)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(110, 68, 255, 0.3)';" onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">Github</a>
+                            <a href="https://github.com/APersonalVoyage/MSc_Thesis/blob/main/Abhishek_Msc_Dissertation%20.pdf" target="_blank" style="flex: 1; text-align: center; padding: 0.6rem 0; background: transparent; border: 2px solid var(--primary-color); color: white; text-decoration: none; border-radius: 30px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.backgroundColor='var(--primary-color)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(110, 68, 255, 0.3)';" onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">Thesis</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/GW150914_IMR.png" alt="Project 2" class="project-img"/>
+                <!-- Project Card 2 -->
+                <div style="background: rgba(25, 25, 50, 0.7); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); backdrop-filter: blur(8px); border: 1px solid rgba(110, 68, 255, 0.2); height: 100%; display: flex; flex-direction: column;">
+                    <div style="overflow: hidden; height: 180px; position: relative;">
+                        <img src="./assets/GW150914_IMR.png" alt="Project 2" style="width: 100%; height: 100%; object-fit: cover;"/>
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(10, 10, 35, 0.7));"></div>
                     </div>
-                    <h2 class="experience-sub-title project-title">Parameter Estimation of Gravitational-wave Sources</h2>
-                    <p style="padding: 0 15px; margin-bottom: 15px; font-size: 0.9rem;">
-                      Developed techniques to extract physical properties of distant cosmic events like black hole mergers from their gravitational wave signals using Bayesian inference.
-                    </p>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/APersonalVoyage/GW-data-analysis'">
-                          Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/gw-odw/odw-2021'">
-                          Reference
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/PE.jpg" alt="Project 3" class="project-img"/>
-                    </div>
-                    <h2 class="experience-sub-title project-title">GW Data Analysis & Signal Processing</h2>
-                    <p style="padding: 0 15px; margin-bottom: 15px; font-size: 0.9rem;">
-                      Applied advanced signal processing techniques to extract gravitational wave signals from detector noise and implemented matched filtering for optimal signal detection.
-                    </p>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/APersonalVoyage/Data-Analysis-2022'">
-                          Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/APersonalVoyage/Data-Analysis-2022'">
-                          Source Code
-                        </button>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                        <h3 style="color: var(--secondary-color); margin: 0 0 1rem 0; font-size: 1.2rem;">Parameter Estimation of Gravitational-wave Sources</h3>
+                        <p style="margin: 0 0 1.5rem 0; font-size: 0.9rem; line-height: 1.5; flex-grow: 1;">
+                            Developed techniques to extract physical properties of distant cosmic events like black hole mergers from their gravitational wave signals using Bayesian inference.
+                        </p>
+                        <div style="display: flex; gap: 1rem; margin-top: auto;">
+                            <a href="https://github.com/APersonalVoyage/GW-data-analysis" target="_blank" style="flex: 1; text-align: center; padding: 0.6rem 0; background: transparent; border: 2px solid var(--primary-color); color: white; text-decoration: none; border-radius: 30px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.backgroundColor='var(--primary-color)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(110, 68, 255, 0.3)';" onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">Github</a>
+                            <a href="https://github.com/gw-odw/odw-2021" target="_blank" style="flex: 1; text-align: center; padding: 0.6rem 0; background: transparent; border: 2px solid var(--primary-color); color: white; text-decoration: none; border-radius: 30px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.backgroundColor='var(--primary-color)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(110, 68, 255, 0.3)';" onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">Reference</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="details-container color-container">
-                    <div class="article-container">
-                        <img src="./assets/Screenshot 2023-08-24 at 6.26.45 PM.png" alt="Project 4" class="project-img"/>
+                <!-- Project Card 3 -->
+                <div style="background: rgba(25, 25, 50, 0.7); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); backdrop-filter: blur(8px); border: 1px solid rgba(110, 68, 255, 0.2); height: 100%; display: flex; flex-direction: column;">
+                    <div style="overflow: hidden; height: 180px; position: relative;">
+                        <img src="./assets/PE.jpg" alt="Project 3" style="width: 100%; height: 100%; object-fit: cover;"/>
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(10, 10, 35, 0.7));"></div>
                     </div>
-                    <h2 class="experience-sub-title project-title">Space Physics Communication Platform</h2>
-                    <p style="padding: 0 15px; margin-bottom: 15px; font-size: 0.9rem;">
-                      Created this website to share my research in gravitational wave physics and cosmology, making complex physics concepts accessible to a wider audience.
-                    </p>
-                    <div class="btn-container">
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/APersonalVoyage/APersonalVoyage.github.io'">
-                          Github
-                        </button>
-                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://apersonalvoyage.github.io/'">
-                          View
-                        </button>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                        <h3 style="color: var(--secondary-color); margin: 0 0 1rem 0; font-size: 1.2rem;">GW Data Analysis & Signal Processing</h3>
+                        <p style="margin: 0 0 1.5rem 0; font-size: 0.9rem; line-height: 1.5; flex-grow: 1;">
+                            Applied advanced signal processing techniques to extract gravitational wave signals from detector noise and implemented matched filtering for optimal signal detection.
+                        </p>
+                        <div style="display: flex; gap: 1rem; margin-top: auto;">
+                            <a href="https://github.com/APersonalVoyage/Data-Analysis-2022" target="_blank" style="flex: 1; text-align: center; padding: 0.6rem 0; background: transparent; border: 2px solid var(--primary-color); color: white; text-decoration: none; border-radius: 30px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.backgroundColor='var(--primary-color)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(110, 68, 255, 0.3)';" onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">Github</a>
+                            <a href="https://github.com/APersonalVoyage/Data-Analysis-2022" target="_blank" style="flex: 1; text-align: center; padding: 0.6rem 0; background: transparent; border: 2px solid var(--primary-color); color: white; text-decoration: none; border-radius: 30px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.backgroundColor='var(--primary-color)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(110, 68, 255, 0.3)';" onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">Source</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project Card 4 -->
+                <div style="background: rgba(25, 25, 50, 0.7); border-radius: 12px; overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); backdrop-filter: blur(8px); border: 1px solid rgba(110, 68, 255, 0.2); height: 100%; display: flex; flex-direction: column;">
+                    <div style="overflow: hidden; height: 180px; position: relative;">
+                        <img src="./assets/Screenshot 2023-08-24 at 6.26.45 PM.png" alt="Project 4" style="width: 100%; height: 100%; object-fit: cover;"/>
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 40px; background: linear-gradient(transparent, rgba(10, 10, 35, 0.7));"></div>
+                    </div>
+                    <div style="padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column;">
+                        <h3 style="color: var(--secondary-color); margin: 0 0 1rem 0; font-size: 1.2rem;">Space Physics Communication Platform</h3>
+                        <p style="margin: 0 0 1.5rem 0; font-size: 0.9rem; line-height: 1.5; flex-grow: 1;">
+                            Created this website to share my research in gravitational wave physics and cosmology, making complex physics concepts accessible to a wider audience.
+                        </p>
+                        <div style="display: flex; gap: 1rem; margin-top: auto;">
+                            <a href="https://github.com/APersonalVoyage/APersonalVoyage.github.io" target="_blank" style="flex: 1; text-align: center; padding: 0.6rem 0; background: transparent; border: 2px solid var(--primary-color); color: white; text-decoration: none; border-radius: 30px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.backgroundColor='var(--primary-color)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(110, 68, 255, 0.3)';" onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">Github</a>
+                            <a href="https://apersonalvoyage.github.io/" target="_blank" style="flex: 1; text-align: center; padding: 0.6rem 0; background: transparent; border: 2px solid var(--primary-color); color: white; text-decoration: none; border-radius: 30px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease; position: relative; overflow: hidden;" onmouseover="this.style.backgroundColor='var(--primary-color)'; this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(110, 68, 255, 0.3)';" onmouseout="this.style.backgroundColor='transparent'; this.style.transform='translateY(0)'; this.style.boxShadow='none';">View</a>
                     </div>
                 </div>
             </div>
+                
         </div>
-        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"/>
+        </div>
+        <div style="position: absolute; bottom: 0; left: 20%; width: 60%; height: 1px; background: linear-gradient(90deg, transparent, var(--primary-color), transparent);"></div>
     </section>
     
     <!-- Contact section with space theme -->
-    <section id="contact">
-        <p class="section__text__p1">Get in Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-container">
-            <div class="contact-info-container">
-                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-                <p><a href="mailto:abhishek@alphago.in">abhishek@alphago.in</a></p>
+    <section id="contact" style="padding: 6rem 2rem; position: relative;">
+        <h1 class="title" style="text-align: center; margin-bottom: 2rem; font-size: 1.9rem;">Contact Me</h1>
+        
+        <div class="contact-container" style="max-width: 1200px; margin: 0 auto; margin-bottom: 2rem; display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem; background: rgba(25, 25, 50, 0.5); border-radius: 15px; overflow: hidden; backdrop-filter: blur(10px); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
+            
+            <!-- Contact Info Card -->
+            <div style="padding: 3rem; background: rgba(110, 68, 255, 0.2); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; position: relative; overflow: hidden;">
+                <div style="position: absolute; width: 200%; height: 200%; top: -50%; left: -50%; background: radial-gradient(circle at center, rgba(76, 201, 240, 0.1) 0%, transparent 70%); z-index: 0; animation: pulse 15s infinite alternate;"></div>
+                
+                <div style="position: relative; z-index: 1; display: flex; flex-direction: column; gap: 2rem; align-items: center;">
+                    <h3 style="color: var(--secondary-color); margin: 0; font-size: 1.4rem;">Get In Touch</h3>
+                    
+                    <div style="width: 80px; height: 80px; border-radius: 50%; display: flex; justify-content: center; align-items: center; background: rgba(247, 37, 133, 0.1); border: 1px solid rgba(247, 37, 133, 0.3); margin-bottom: 0.5rem;">
+                        <img src="./assets/email.png" alt="Email icon" style="width: 40px; height: 40px; filter: drop-shadow(0 0 8px rgba(247, 37, 133, 0.5));" />
             </div>
-            <form id="contact-form" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
+                    
+                    <p style="margin: 0 0 0.5rem 0; color: #aaa; font-size: 0.9rem;">Email me at</p>
+                    
+                    <a href="mailto:abhishek@alphago.in" style="display: inline-block; padding: 0.8rem 2rem; background: var(--accent-color); color: white; text-decoration: none; border-radius: 30px; font-size: 1rem; font-weight: 500; transition: all 0.3s ease; margin-top: 0.5rem; box-shadow: 0 6px 15px rgba(247, 37, 133, 0.3); position: relative; overflow: hidden;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 20px rgba(247, 37, 133, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 15px rgba(247, 37, 133, 0.3)';">
+                        abhishek@alphago.in
+                    </a>
+                    
+                    <div style="margin-top: 2rem; display: flex; gap: 1.5rem;">
+                        <a href="https://linkedin.com/" target="_blank" style="width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; border-radius: 50%; background: rgba(255, 255, 255, 0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255, 255, 255, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.1)';">
+                            <img src="./assets/linkedin.png" alt="LinkedIn" style="width: 20px; height: 20px;" />
+                        </a>
+                        <a href="https://github.com/APersonalVoyage" target="_blank" style="width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; border-radius: 50%; background: rgba(255, 255, 255, 0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255, 255, 255, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.1)';">
+                            <img src="./assets/github.png" alt="GitHub" style="width: 20px; height: 20px;" />
+                        </a>
+                        <a href="https://twitter.com/APersonalVoyage" target="_blank" style="width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; border-radius: 50%; background: rgba(255, 255, 255, 0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.background='rgba(255, 255, 255, 0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255, 255, 255, 0.1)';">
+                            <img src="./assets/twitter.png" alt="Twitter" style="width: 20px; height: 20px;" />
+                        </a>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-color-1">Send Message</button>
+            
+            <!-- Contact Form -->
+            <div style="padding: 3rem;">
+                <h3 style="color: var(--secondary-color); margin: 0 0 2rem 0; font-size: 1.4rem;">Send Me a Message</h3>
+                
+                <!-- 
+                TODO: Implement form submission functionality using one of these approaches:
+                1. Backend server: Create a server endpoint to process form submissions and send emails
+                2. Third-party service: Integrate with FormSpree, EmailJS, or Netlify Forms
+                   - FormSpree: Add action="https://formspree.io/f/your_form_id" to the form
+                   - EmailJS: Use their JavaScript API to send emails directly from the browser
+                   - Netlify Forms: Add netlify attribute to the form if hosting on Netlify
+                3. Client-side email: Use mailto: with form data (limited functionality)
+                
+                Current status: Form is styled but not functional - does not send data anywhere.
+                -->
+                
+                <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div style="position: relative;">
+                        <input type="text" id="name" name="name" placeholder=" " required style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(76, 201, 240, 0.3); border-radius: 8px; color: white; font-size: 1rem; transition: all 0.3s ease; outline: none;" onmouseover="this.style.borderColor='rgba(76, 201, 240, 0.5)';" onmouseout="this.style.borderColor='rgba(76, 201, 240, 0.3)';" onfocus="this.style.borderColor='var(--secondary-color)'; this.style.boxShadow='0 0 15px rgba(76, 201, 240, 0.2)';" onblur="this.style.borderColor='rgba(76, 201, 240, 0.3)'; this.style.boxShadow='none';">
+                        <label for="name" style="position: absolute; left: 1rem; top: 1rem; transition: all 0.3s ease; pointer-events: none; color: #aaa; font-size: 1rem;">Name</label>
+                        <script>
+                            document.getElementById('name').addEventListener('input', function() {
+                                const label = this.nextElementSibling;
+                                if (this.value.trim() !== '') {
+                                    label.style.top = '0';
+                                    label.style.fontSize = '0.8rem';
+                                    label.style.transform = 'translateY(-50%)';
+                                    label.style.backgroundColor = 'rgba(25, 25, 50, 0.8)';
+                                    label.style.padding = '0 0.5rem';
+                                } else {
+                                    label.style.top = '1rem';
+                                    label.style.fontSize = '1rem';
+                                    label.style.transform = 'translateY(0)';
+                                    label.style.backgroundColor = 'transparent';
+                                    label.style.padding = '0';
+                                }
+                            });
+                        </script>
+                    </div>
+                    
+                    <div style="position: relative;">
+                        <input type="email" id="email" name="email" placeholder=" " required style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(76, 201, 240, 0.3); border-radius: 8px; color: white; font-size: 1rem; transition: all 0.3s ease; outline: none;" onmouseover="this.style.borderColor='rgba(76, 201, 240, 0.5)';" onmouseout="this.style.borderColor='rgba(76, 201, 240, 0.3)';" onfocus="this.style.borderColor='var(--secondary-color)'; this.style.boxShadow='0 0 15px rgba(76, 201, 240, 0.2)';" onblur="this.style.borderColor='rgba(76, 201, 240, 0.3)'; this.style.boxShadow='none';">
+                        <label for="email" style="position: absolute; left: 1rem; top: 1rem; transition: all 0.3s ease; pointer-events: none; color: #aaa; font-size: 1rem;">Email</label>
+                        <script>
+                            document.getElementById('email').addEventListener('input', function() {
+                                const label = this.nextElementSibling;
+                                if (this.value.trim() !== '') {
+                                    label.style.top = '0';
+                                    label.style.fontSize = '0.8rem';
+                                    label.style.transform = 'translateY(-50%)';
+                                    label.style.backgroundColor = 'rgba(25, 25, 50, 0.8)';
+                                    label.style.padding = '0 0.5rem';
+                                } else {
+                                    label.style.top = '1rem';
+                                    label.style.fontSize = '1rem';
+                                    label.style.transform = 'translateY(0)';
+                                    label.style.backgroundColor = 'transparent';
+                                    label.style.padding = '0';
+                                }
+                            });
+                        </script>
+                    </div>
+                    
+                    <div style="position: relative;">
+                        <textarea id="message" name="message" rows="5" placeholder=" " required style="width: 100%; padding: 1rem; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(76, 201, 240, 0.3); border-radius: 8px; color: white; font-size: 1rem; transition: all 0.3s ease; outline: none; resize: vertical;" onmouseover="this.style.borderColor='rgba(76, 201, 240, 0.5)';" onmouseout="this.style.borderColor='rgba(76, 201, 240, 0.3)';" onfocus="this.style.borderColor='var(--secondary-color)'; this.style.boxShadow='0 0 15px rgba(76, 201, 240, 0.2)';" onblur="this.style.borderColor='rgba(76, 201, 240, 0.3)'; this.style.boxShadow='none';"></textarea>
+                        <label for="message" style="position: absolute; left: 1rem; top: 1rem; transition: all 0.3s ease; pointer-events: none; color: #aaa; font-size: 1rem;">Message</label>
+                        <script>
+                            document.getElementById('message').addEventListener('input', function() {
+                                const label = this.nextElementSibling;
+                                if (this.value.trim() !== '') {
+                                    label.style.top = '0';
+                                    label.style.fontSize = '0.8rem';
+                                    label.style.transform = 'translateY(-50%)';
+                                    label.style.backgroundColor = 'rgba(25, 25, 50, 0.8)';
+                                    label.style.padding = '0 0.5rem';
+                                } else {
+                                    label.style.top = '1rem';
+                                    label.style.fontSize = '1rem';
+                                    label.style.transform = 'translateY(0)';
+                                    label.style.backgroundColor = 'transparent';
+                                    label.style.padding = '0';
+                                }
+                            });
+                        </script>
+                    </div>
+                    
+                    <button type="submit" style="padding: 1rem 2rem; background: linear-gradient(45deg, var(--primary-color), var(--secondary-color)); border: none; border-radius: 30px; color: white; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 1rem; position: relative; overflow: hidden; align-self: flex-start; box-shadow: 0 8px 20px rgba(76, 201, 240, 0.3);" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 25px rgba(76, 201, 240, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(76, 201, 240, 0.3)';">
+                        Send Message
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent); transform: translateX(-100%); transition: 0.6s; pointer-events: none;" onmouseover="this.style.transform='translateX(100%)'"></div>
+                    </button>
             </form>
+            </div>
         </div>
     </section>
     
-    <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+    <footer style="padding: 4rem 0 2rem; position: relative; overflow: hidden; background: linear-gradient(to bottom, rgba(10, 10, 35, 0) 0%, rgba(10, 10, 35, 0.8) 100%);">
+        <!-- Animated stars in the footer -->
+        <div class="footer-stars" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
+            <div class="star-1" style="position: absolute; top: 20%; left: 10%; width: 2px; height: 2px; background: white; border-radius: 50%; animation: twinkle 3s infinite ease-in-out;"></div>
+            <div class="star-2" style="position: absolute; top: 40%; left: 20%; width: 3px; height: 3px; background: white; border-radius: 50%; animation: twinkle 4s infinite ease-in-out 0.5s;"></div>
+            <div class="star-3" style="position: absolute; top: 30%; left: 30%; width: 2px; height: 2px; background: white; border-radius: 50%; animation: twinkle 5s infinite ease-in-out 1s;"></div>
+            <div class="star-4" style="position: absolute; top: 25%; left: 40%; width: 1px; height: 1px; background: white; border-radius: 50%; animation: twinkle 3.5s infinite ease-in-out 0.2s;"></div>
+            <div class="star-5" style="position: absolute; top: 35%; left: 50%; width: 2px; height: 2px; background: white; border-radius: 50%; animation: twinkle 4.5s infinite ease-in-out 0.7s;"></div>
+            <div class="star-6" style="position: absolute; top: 20%; left: 60%; width: 3px; height: 3px; background: white; border-radius: 50%; animation: twinkle 3s infinite ease-in-out 1.5s;"></div>
+            <div class="star-7" style="position: absolute; top: 40%; left: 70%; width: 2px; height: 2px; background: white; border-radius: 50%; animation: twinkle 5s infinite ease-in-out 0.3s;"></div>
+            <div class="star-8" style="position: absolute; top: 25%; left: 80%; width: 2px; height: 2px; background: white; border-radius: 50%; animation: twinkle 4s infinite ease-in-out 1.2s;"></div>
+            <div class="star-9" style="position: absolute; top: 15%; left: 90%; width: 1px; height: 1px; background: white; border-radius: 50%; animation: twinkle 3.5s infinite ease-in-out 0.8s;"></div>
             </div>
-        </nav>
-        <div style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #aaa;">
-            <p>"The cosmos is within us. We are made of star-stuff." - Carl Sagan</p>
+        
+        <!-- Quote container with cosmic styling -->
+        <div style="max-width: 800px; margin: 0 auto; position: relative; z-index: 1; padding: 0 2rem;">
+            <!-- Orbit element -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 250px; height: 250px; border: 1px solid rgba(76, 201, 240, 0.2); border-radius: 50%; animation: rotate 20s linear infinite;">
+                <div style="position: absolute; top: -4px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; background: var(--secondary-color); border-radius: 50%; box-shadow: 0 0 15px var(--secondary-color);"></div>
+            </div>
+            
+            <!-- Inner orbit -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 150px; height: 150px; border: 1px solid rgba(247, 37, 133, 0.2); border-radius: 50%; animation: rotate 15s linear infinite reverse;">
+                <div style="position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%); width: 8px; height: 8px; background: var(--accent-color); border-radius: 50%; box-shadow: 0 0 15px var(--accent-color);"></div>
+            </div>
+            
+            <!-- Quote container -->
+            <div style="background: rgba(25, 25, 50, 0.6); backdrop-filter: blur(10px); border-radius: 15px; padding: 3rem; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); border: 1px solid rgba(76, 201, 240, 0.1); text-align: center; transform-style: preserve-3d; perspective: 1000px;">
+                <!-- Quote icon -->
+                <div style="width: 60px; height: 60px; margin: 0 auto 1.5rem; position: relative;">
+                    <div style="position: absolute; top: 0; left: 20px; font-size: 80px; line-height: 1; color: rgba(110, 68, 255, 0.4); text-shadow: 0 0 10px rgba(110, 68, 255, 0.3);">"</div>
+                </div>
+                
+                <!-- Quote text with subtle animation -->
+                <p class="quote-text" style="font-size: 1.5rem; line-height: 1.6; color: white; font-weight: 300; margin: 0 0 1.5rem; position: relative; opacity: 0; animation: fadeUp 1s forwards 0.5s;">
+                    The cosmos is within us. We are made of star-stuff.
+                </p>
+                
+                <!-- Star divider -->
+                <div style="display: flex; align-items: center; justify-content: center; margin: 1.5rem 0; gap: 0.5rem;">
+                    <div style="height: 1px; width: 60px; background: linear-gradient(to right, transparent, var(--primary-color), transparent);"></div>
+                    <div style="width: 6px; height: 6px; background: var(--secondary-color); transform: rotate(45deg); animation: pulse 4s infinite;"></div>
+                    <div style="height: 1px; width: 60px; background: linear-gradient(to right, transparent, var(--primary-color), transparent);"></div>
+                </div>
+                
+                <!-- Author with hover effect -->
+                <div class="author-container" style="display: inline-block; position: relative; margin-top: 1rem; padding: 0.5rem 1.5rem; opacity: 0; animation: fadeUp 1s forwards 1s;">
+                    <p style="color: var(--secondary-color); font-size: 1.1rem; font-weight: 500; margin: 0; letter-spacing: 1px;">Carl Sagan</p>
+                    <div style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 1px; background: linear-gradient(to right, transparent, var(--secondary-color), transparent); transition: width 0.3s ease-out;"></div>
+                </div>
+                
+                <script>
+                    document.querySelector('.author-container').addEventListener('mouseenter', function() {
+                        this.querySelector('div').style.width = '100%';
+                    });
+                    document.querySelector('.author-container').addEventListener('mouseleave', function() {
+                        this.querySelector('div').style.width = '0';
+                    });
+                </script>
+            </div>
         </div>
+        
+        <!-- Copyright text -->
+        <div style="text-align: center; margin-top: 3rem; color: #aaa; font-size: 0.8rem;">
+            <p>&copy; 2025 Abhishek Karkola. All rights reserved.</p>
+        </div>
+        
+        <!-- Add animations to the styles -->
+        <style>
+            @keyframes rotate {
+                from { transform: translate(-50%, -50%) rotate(0deg); }
+                to { transform: translate(-50%, -50%) rotate(360deg); }
+            }
+            
+            @keyframes pulse {
+                0%, 100% { opacity: 0.7; box-shadow: 0 0 5px var(--secondary-color); }
+                50% { opacity: 1; box-shadow: 0 0 15px var(--secondary-color), 0 0 30px var(--secondary-color); }
+            }
+            
+            @keyframes fadeUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            @keyframes twinkle {
+                0%, 100% { opacity: 0.2; box-shadow: 0 0 0 rgba(255, 255, 255, 0); }
+                50% { opacity: 1; box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+            }
+        </style>
     </footer>
+    
+    <!-- Add back-to-top button with styles -->
+    <div id="back-to-top-btn" style="position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--primary-color); color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; box-shadow: 0 4px 15px rgba(110, 68, 255, 0.5); z-index: 1000; opacity: 0; visibility: hidden; transition: all 0.3s ease; transform: translateY(20px);">
+        <i style="font-size: 20px; transform: translateY(-2px);">↑</i>
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; background: rgba(255, 255, 255, 0.1); transform: scale(0); transition: transform 0.3s ease; z-index: -1;"></div>
+    </div>
     
     <script src="script.js"></script>
     <script>
+        // Toggle hamburger menu
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-links');
+            const hamburgerIcon = document.querySelector('.hamburger-icon');
+            menu.classList.toggle('open');
+            hamburgerIcon.classList.toggle('open');
+        }
+        
         // Create starfield background
         function createStars() {
             const container = document.body;
@@ -583,17 +1352,72 @@
                 });
             });
             
-            // Gravity-wave effect for profile image
-            const profileImage = document.querySelector('.section__pic');
-            if (profileImage) {
-                profileImage.addEventListener('mouseover', function() {
-                    this.classList.add('gw-animate');
-                });
-                
-                profileImage.addEventListener('mouseout', function() {
-                    this.classList.remove('gw-animate');
+            // Back to top button functionality
+            const backToTopBtn = document.getElementById('back-to-top-btn');
+            const aboutSection = document.getElementById('about');
+            
+            // Event listener for back to top button
+            backToTopBtn.addEventListener('click', function() {
+                            window.scrollTo({
+                    top: 0,
+                                behavior: 'smooth'
+                            });
+            });
+            
+            // Show/hide back to top button based on scroll position
+            window.addEventListener('scroll', function() {
+                if (aboutSection && window.scrollY >= aboutSection.offsetTop - 100) {
+                    backToTopBtn.style.opacity = '1';
+                    backToTopBtn.style.visibility = 'visible';
+                    backToTopBtn.style.transform = 'translateY(0)';
+                } else {
+                    backToTopBtn.style.opacity = '0';
+                    backToTopBtn.style.visibility = 'hidden';
+                    backToTopBtn.style.transform = 'translateY(20px)';
+                }
+            });
+            
+            // Hover animation for back to top button
+            backToTopBtn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 8px 25px rgba(110, 68, 255, 0.7)';
+                this.querySelector('div').style.transform = 'scale(1.4)';
+            });
+            
+            backToTopBtn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 4px 15px rgba(110, 68, 255, 0.5)';
+                this.querySelector('div').style.transform = 'scale(0)';
+            });
+            
+            // Create additional nav particles dynamically
+            function createNavParticles() {
+                const navbars = document.querySelectorAll('.animated-navbar');
+                navbars.forEach(navbar => {
+                    for (let i = 0; i < 8; i++) {
+                        const particle = document.createElement('div');
+                        particle.className = 'nav-particle';
+                        
+                        // Random position, duration, and movement
+                        particle.style.setProperty('--duration', `${12 + Math.random() * 10}s`);
+                        particle.style.setProperty('--delay', `${Math.random() * 10}s`);
+                        particle.style.setProperty('--opacity', `${0.4 + Math.random() * 0.4}`);
+                        particle.style.setProperty('--x-offset', `${-20 + Math.random() * 40}px`);
+                        
+                        particle.style.left = `${Math.random() * 100}%`;
+                        particle.style.top = `${10 + Math.random() * 60}px`;
+                        
+                        // Random size
+                        const size = 1 + Math.random() * 1.5;
+                        particle.style.width = `${size}px`;
+                        particle.style.height = `${size}px`;
+                        
+                        navbar.appendChild(particle);
+                    }
                 });
             }
+            
+            createNavParticles();
         });
         
         // Scroll progress bar update
@@ -642,9 +1466,8 @@
             }
         });
     </script>
-    <button id="back-to-top" title="Back to Top">↑</button>
     <div id="particles-js"></div>
-  </body>
+</body>
 </html>
 
     

@@ -9,95 +9,120 @@
   <link rel="stylesheet" href="blog.css">
 </head>
 <body>
-  <header>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="blog.html" class="nav-link active">Blog</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar"></div>
+  </div>
+  
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <nav>
+    <div class="logo">A Personal Voyage</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="blog.html" class="nav-link active">Blog</a></li>
+      <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+      <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="hamburger-menu" onclick="toggleMenu()">
+      <div class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="index.html#projects" class="nav-link">Projects</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
 
   <main>
-    <section id="blog" class="blog-section-container">
-      <div class="blog-header">
-        <h1 class="title">Welcome to My Blog</h1>
+    <section id="blog" class="section-container">
+      <div class="content-container">
+        <h1 class="section-title">Welcome to My Blog</h1>
         <p class="section__text">Delve into thoughts, philosophies, and explorations on life, leadership, and beyond.</p>  
-      </div>
       
-      <div class="search-container">
-        <input type="text" class="search-input" placeholder="Search articles...">
-        <button class="search-btn"><i class="fas fa-search"></i></button>
-      </div>
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Search articles...">
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
 
-      <div class="blog-containers">
-        <!-- Blog Post 1 -->
-        <article class="blog-details">
-          <div class="blog-image" style="background-image: url('assets/blog-leadership.jpg')"></div>
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span><i class="far fa-calendar"></i> December 15, 2024</span>
-              <span><i class="far fa-clock"></i> 8 min read</span>
+        <div class="blog-containers">
+          <!-- Blog Post 1 -->
+          <article class="blog-details">
+            <div class="blog-image" style="background-image: url('assets/blog-leadership.jpg')"></div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar"></i> December 15, 2024</span>
+                <span><i class="far fa-clock"></i> 8 min read</span>
+              </div>
+              <h2 class="project-title">
+                <a href="blog_post_1.html" class="blog-link" target="_blank">Leadership, Morality, and the Struggle for Humanity</a>
+              </h2>
+              <p class="blog-summary">
+                From ancient kings to modern billionaires, leadership has shaped societies and determined the fates of millions. Yet, the question remains: what makes a leader just, and what happens when power is used as a means rather than a responsibility?
+              </p>
+              <a href="blog_post_1.html" class="read-more" target="_blank">Read more <i class="fas fa-arrow-right"></i></a>
+              <div class="tags">
+                <span class="tag">Leadership</span>
+                <span class="tag">Philosophy</span>
+                <span class="tag">Ethics</span>
+              </div>
             </div>
-            <h2 class="project-title">
-              <a href="blog_post_1.html" class="blog-link">Leadership, Morality, and the Struggle for Humanity</a>
-            </h2>
-            <p class="blog-summary">
-              From ancient kings to modern billionaires, leadership has shaped societies and determined the fates of millions. Yet, the question remains: what makes a leader just, and what happens when power is used as a means rather than a responsibility?
-            </p>
-            <a href="blog_post_1.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
-            <div class="tags">
-              <span class="tag">Leadership</span>
-              <span class="tag">Philosophy</span>
-              <span class="tag">Ethics</span>
+          </article>   
+          
+          <!-- Blog Post 2 -->
+          <article class="blog-details">
+            <div class="blog-image" style="background-image: url('assets/blog-india.jpg')"></div>
+            <div class="blog-content">
+              <div class="blog-meta">
+                <span><i class="far fa-calendar"></i> February 20, 2025</span>
+                <span><i class="far fa-clock"></i> 6 min read</span>
+              </div>
+              <h2 class="project-title">
+                <a href="blog_post_2.html" class="blog-link" target="_blank">Why Does India Struggle with Civic Sense?</a>
+              </h2>
+              <p class="blog-summary">
+                Civic sense plays a crucial role in shaping a society, yet in India, a lack of it is evident everywhere—from littered streets to vandalized public property. This article delves into the historical and cultural roots of this issue.
+              </p>
+              <a href="blog_post_2.html" class="read-more" target="_blank">Read more <i class="fas fa-arrow-right"></i></a>
+              <div class="tags">
+                <span class="tag">India</span>
+                <span class="tag">Society</span>
+                <span class="tag">Culture</span>
+              </div>
             </div>
-          </div>
-        </article>   
+          </article>
+        </div>
         
-        <!-- Blog Post 2 -->
-        <article class="blog-details">
-          <div class="blog-image" style="background-image: url('assets/blog-india.jpg')"></div>
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span><i class="far fa-calendar"></i> February 20, 2025</span>
-              <span><i class="far fa-clock"></i> 6 min read</span>
-            </div>
-            <h2 class="project-title">
-              <a href="blog_post_2.html" class="blog-link">Why Does India Struggle with Civic Sense?</a>
-            </h2>
-            <p class="blog-summary">
-              Civic sense plays a crucial role in shaping a society, yet in India, a lack of it is evident everywhere—from littered streets to vandalized public property. This article delves into the historical and cultural roots of this issue.
-            </p>
-            <a href="blog_post_2.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
-            <div class="tags">
-              <span class="tag">India</span>
-              <span class="tag">Society</span>
-              <span class="tag">Culture</span>
-            </div>
-          </div>
-        </article>
+        <div class="newsletter-container">
+          <h3>Subscribe to my newsletter</h3>
+          <p>Get notified when I publish new articles</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
       </div>
       
-      <div class="newsletter-container">
-        <h3>Subscribe to my newsletter</h3>
-        <p>Get notified when I publish new articles</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Your email address" required>
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
+      <!-- Section divider -->
+      <div class="section-divider"></div>
     </section>
   </main>
 
   <footer>
     <div class="footer-content">
       <div class="social-links">
-        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="#" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
       <p>&copy; 2024 Abhishek Karkola. All rights reserved.</p>
     </div>
@@ -109,13 +134,26 @@
   <script>
     particlesJS("particles-js", {
       particles: {
-        number: { value: 40, density: { enable: true, value_area: 1000 } },
-        color: { value: "#ff9900" },
+        number: { value: 100, density: { enable: true, value_area: 800 } },
+        color: { value: ["#6e44ff", "#4cc9f0", "#f72585"] },
         shape: { type: "circle" },
-        opacity: { value: 0.3, random: false },
+        opacity: { value: 0.5, random: true },
         size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 150, color: "#ff9900", opacity: 0.2, width: 1 },
-        move: { enable: true, speed: 1.5, direction: "none", random: false, straight: false, out_mode: "out" }
+        line_linked: { 
+          enable: true, 
+          distance: 150, 
+          color: "#4cc9f0", 
+          opacity: 0.3, 
+          width: 1 
+        },
+        move: { 
+          enable: true, 
+          speed: 1.5, 
+          direction: "none", 
+          random: true, 
+          straight: false, 
+          out_mode: "out" 
+        }
       },
       interactivity: {
         detect_on: "canvas",
@@ -123,8 +161,9 @@
           onhover: { enable: true, mode: "repulse" }, 
           onclick: { enable: true, mode: "push" } 
         },
-        modes: {
-          repulse: { distance: 80, duration: 0.4 }
+        modes: { 
+          repulse: { distance: 100, duration: 0.4 }, 
+          push: { particles_nb: 4 } 
         }
       },
       retina_detect: true
