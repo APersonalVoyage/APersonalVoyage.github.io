@@ -102,19 +102,19 @@
           </div>
           
           <div class="text-container" style="margin-top: 30px; text-align: justify;">
-            <p>I’m a Data Automation Engineer at Legal and General, passionate about problem-solving, automating workflows, and exploring ideas across various domains.</p>
+            <p>I'm a Data Automation Engineer at Legal and General, passionate about problem-solving, automating workflows, and exploring ideas across various domains.</p>
           
             <p>Academically, I hold an MSc in Gravitational Physics from Cardiff University, awarded through a merit-based scholarship, along with a Bachelor's degree in Electronics and Communication. My studies have honed my analytical skills and deepened my curiosity about complex systems.</p>
           
-            <p>I’ve worked on intriguing research projects, including investigating Gravitational Wave Constraints on Modified Gravity with Dr. Ian Harrison and learning about Parameter Estimation of Gravitational-wave Sources with Dr. Vivian Raymond. These experiences allowed me to analyze gravitational wave data and uncover insights about the most interesting wave in the universe.</p>
+            <p>I've worked on intriguing research projects, including investigating Gravitational Wave Constraints on Modified Gravity with Dr. Ian Harrison and learning about Parameter Estimation of Gravitational-wave Sources with Dr. Vivian Raymond. These experiences allowed me to analyze gravitational wave data and uncover insights about the most interesting wave in the universe.</p>
           
-            <p>Beyond research, I’ve contributed as a Teaching Assistant, guiding students through Computational Physics using Python. My time at ISRO provided valuable hands-on experience in algorithm development and real-world applications.</p>
+            <p>Beyond research, I've contributed as a Teaching Assistant, guiding students through Computational Physics using Python. My time at ISRO provided valuable hands-on experience in algorithm development and real-world applications.</p>
           
-            <p>I have expertise in Python, SQL, and Linux, and I’ve worked with tools like TensorFlow, Scikit-learn, GWPY, and Astropy during my degree. Now that I working away from Academia, I have had the opportunity to learn and contribute in Snowflake, AWS's Data Engineering services, DBT tool. 
+            <p>I have expertise in Python, SQL, and Linux, and I've worked with tools like TensorFlow, Scikit-learn, GWPY, and Astropy during my degree. Now that I working away from Academia, I have had the opportunity to learn and contribute in Snowflake, AWS's Data Engineering services, DBT tool. 
               
-              <p>Additionally, I’ve participated in hackathons such as the INDIA-SINGAPORE Hackathon 2018 and SMART INDIA HACKATHON 2018, which were incredible learning experiences.</p>
+              <p>Additionally, I've participated in hackathons such as the INDIA-SINGAPORE Hackathon 2018 and SMART INDIA HACKATHON 2018, which were incredible learning experiences.</p>
           
-            <p>Recently, I’ve revamped my blog to share my perspectives on various topics. Feel free to check it out and connect if you’d like to discuss anything—from space and technology to entirely new ideas. I’d love to exchange thoughts and insights!</p>
+            <p>Recently, I've revamped my blog to share my perspectives on various topics. Feel free to check it out and connect if you'd like to discuss anything—from space and technology to entirely new ideas. I'd love to exchange thoughts and insights!</p>
           </div>
           
 
@@ -278,6 +278,35 @@
           
         </div>
       </div>
+      <div class="details-container">
+        <h2 class="experience-sub-title">Skills Progress</h2>
+        <div class="skills-container">
+          <div class="skill">
+            <span class="skill-name">Python</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 90%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">SQL</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 85%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">Snowflake</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 80%;"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <span class="skill-name">AWS</span>
+            <div class="skill-bar">
+              <div class="skill-level" style="width: 70%;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <img
@@ -402,15 +431,26 @@
   <section id="contact">
     <p class="section__text__p1">Get in Touch</p>
     <h1 class="title">Contact Me</h1>
-    <div class="contact-info-upper-container">
+    <div class="contact-container">
       <div class="contact-info-container">
-        <img
-          src="./assets/email.png"
-          alt="Email icon"
-          class="icon contact-icon email-icon"
-        />
-        <p><a href="mailto:examplemail@gmail.com">abhishek@alphago.in</a></p>
+        <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+        <p><a href="mailto:abhishek@alphago.in">abhishek@alphago.in</a></p>
       </div>
+      <form id="contact-form" class="contact-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-color-1">Send Message</button>
+      </form>
     </div>
   </section>
   <footer>
@@ -428,6 +468,24 @@
     
   </footer>
   <script src="script.js"></script>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('light-mode');
+      
+      // Save preference in localStorage
+      const isLightMode = document.body.classList.contains('light-mode');
+      localStorage.setItem('lightMode', isLightMode.toString());
+    }
+
+    // Check user preference on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const isLightMode = localStorage.getItem('lightMode') === 'true';
+      if (isLightMode) {
+        document.body.classList.add('light-mode');
+      }
+    });
+  </script>
+  <button id="back-to-top" title="Back to Top">↑</button>
 </body>
 </html>
 
