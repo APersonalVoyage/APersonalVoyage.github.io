@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cosmic Insights - Abhishek Karkola's Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar"></div>
+  </div>
+  
+  <nav id="desktop-nav">
+    <div class="logo">Space & Waves</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <nav id="hamburger-nav">
+    <div class="logo">Abhishek Karkola</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="index.html#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="index.html#research" onclick="toggleMenu()">Research</a></li>
+        <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
+        <li><a href="index.html#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="index.html#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="blog" class="blog-section-container">
+      <div class="blog-header">
+        <h1 class="title">Cosmic Insights</h1>
+        <p class="section__text">Exploring gravitational waves, space physics, and philosophical questions about our universe.</p>  
+      </div>
+      
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search articles...">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+      </div>
+      
+      <div class="featured-article">
+        <div class="featured-image" style="background-image: url('assets/black-hole-merger.jpg');">
+          <div class="featured-tag">Featured</div>
+        </div>
+        <div class="featured-content">
+          <div class="blog-meta">
+            <span><i class="far fa-calendar"></i> June 28, 2024</span>
+            <span><i class="far fa-clock"></i> 12 min read</span>
+          </div>
+          <h2 class="featured-title">
+            <a href="blog_post_1.html">The Future of Gravitational Wave Astronomy</a>
+          </h2>
+          <p class="featured-summary">
+            With the next generation of detectors on the horizon, gravitational wave astronomy stands at a pivotal moment. This article explores how improved sensitivity will open new windows into the cosmos, potentially revealing primordial gravitational waves from the Big Bang and enabling multi-messenger astronomy at unprecedented scales.
+          </p>
+          <a href="blog_post_1.html" class="read-more">Continue reading <i class="fas fa-arrow-right"></i></a>
+          <div class="tags">
+            <span class="tag">Gravitational Waves</span>
+            <span class="tag">Astronomy</span>
+            <span class="tag">LIGO</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="blog-categories">
+        <h2>Categories</h2>
+        <div class="category-pills">
+          <button class="category-pill active">All</button>
+          <button class="category-pill">Gravitational Waves</button>
+          <button class="category-pill">Cosmology</button>
+          <button class="category-pill">General Relativity</button>
+          <button class="category-pill">Philosophy</button>
+        </div>
+      </div>
+
+      <div class="blog-containers">
+        <!-- Blog Post 1 -->
+        <article class="blog-details">
+          <div class="blog-image" style="background-image: url('assets/gw-leadership.jpg')"></div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> June 15, 2024</span>
+              <span><i class="far fa-clock"></i> 8 min read</span>
+            </div>
+            <h2 class="project-title">
+              <a href="blog_post_1.html" class="blog-link">Leadership, Morality, and the Struggle for Humanity</a>
+            </h2>
+            <p class="blog-summary">
+              From ancient kings to modern billionaires, leadership has shaped societies and determined the fates of millions. Yet, the question remains: what makes a leader just, and what happens when power is used as a means rather than a responsibility?
+            </p>
+            <a href="blog_post_1.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="tags">
+              <span class="tag">Leadership</span>
+              <span class="tag">Philosophy</span>
+              <span class="tag">Ethics</span>
+            </div>
+          </div>
+        </article>   
+        
+        <!-- Blog Post 2 -->
+        <article class="blog-details">
+          <div class="blog-image" style="background-image: url('assets/india-civic.jpg')"></div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> May 28, 2024</span>
+              <span><i class="far fa-clock"></i> 6 min read</span>
+            </div>
+            <h2 class="project-title">
+              <a href="blog_post_2.html" class="blog-link">Why Does India Struggle with Civic Sense?</a>
+            </h2>
+            <p class="blog-summary">
+              Civic sense plays a crucial role in shaping a society, yet in India, a lack of it is evident everywhere—from littered streets to vandalized public property. This article delves into the historical and cultural roots of this issue.
+            </p>
+            <a href="blog_post_2.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="tags">
+              <span class="tag">India</span>
+              <span class="tag">Society</span>
+              <span class="tag">Culture</span>
+            </div>
+          </div>
+        </article>
+        
+        <!-- Blog Post 3 -->
+        <article class="blog-details">
+          <div class="blog-image" style="background-image: url('assets/binary-black-hole.jpg')"></div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> May 10, 2024</span>
+              <span><i class="far fa-clock"></i> 10 min read</span>
+            </div>
+            <h2 class="project-title">
+              <a href="#" class="blog-link">Understanding Binary Black Hole Mergers</a>
+            </h2>
+            <p class="blog-summary">
+              Binary black hole mergers are among the most energetic events in the universe. This article explains the physics behind these cosmic collisions and how gravitational wave detectors help us observe them.
+            </p>
+            <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="tags">
+              <span class="tag">Black Holes</span>
+              <span class="tag">Astrophysics</span>
+              <span class="tag">LIGO</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Blog Post 4 -->
+        <article class="blog-details">
+          <div class="blog-image" style="background-image: url('assets/modified-gravity.jpg')"></div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> April 22, 2024</span>
+              <span><i class="far fa-clock"></i> 9 min read</span>
+            </div>
+            <h2 class="project-title">
+              <a href="#" class="blog-link">Testing Modified Gravity with Gravitational Waves</a>
+            </h2>
+            <p class="blog-summary">
+              General Relativity has passed every test so far, but could gravitational waves reveal deviations? This article explores how modified gravity theories could be tested using current and future gravitational wave detectors.
+            </p>
+            <a href="#" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+            <div class="tags">
+              <span class="tag">Modified Gravity</span>
+              <span class="tag">General Relativity</span>
+              <span class="tag">Physics</span>
+            </div>
+          </div>
+        </article>
+      </div>
+      
+      <div class="pagination">
+        <a href="#" class="pagination-arrow"><i class="fas fa-chevron-left"></i></a>
+        <a href="#" class="pagination-number active">1</a>
+        <a href="#" class="pagination-number">2</a>
+        <a href="#" class="pagination-number">3</a>
+        <span class="pagination-dots">...</span>
+        <a href="#" class="pagination-number">8</a>
+        <a href="#" class="pagination-arrow"><i class="fas fa-chevron-right"></i></a>
+      </div>
+      
+      <div class="newsletter-container">
+        <h3>Subscribe to Cosmic Updates</h3>
+        <p>Get notified when I publish new articles about space, physics, and gravitational waves</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <nav>
+      <div class="nav-links-container">
+        <ul class="nav-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#research">Research</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="social-links">
+      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+      <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #aaa;">
+      <p>"The cosmos is within us. We are made of star-stuff." - Carl Sagan</p>
+      <p>&copy; 2024 Abhishek Karkola. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <button id="back-to-top" title="Back to Top">↑</button>
+  <div id="particles-js"></div>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

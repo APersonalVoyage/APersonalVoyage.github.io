@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    <style>
+      /* Fix section spacing and overlapping */
+      section {
+        min-height: auto;
+        padding: 100px 0 60px;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        clear: both;
+        margin-bottom: 20px; /* Add space between sections */
+      }
+      
+      /* Clear floats and fix section structure */
+      section:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Profile section specific fixes */
+      #profile {
+        padding-bottom: 100px;
+        margin-top: 50px;
+      }
+      
+      /* Fixed positioning for section containers */
+      .section-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 4rem;
+        width: 90%;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      
+      /* Fix About section spacing */
+      #about {
+        padding-top: 140px;
+        padding-bottom: 120px;
+      }
+      
+      /* Text container adjustments */
+      .text-container {
+        flex: 1;
+        max-width: 700px;
+      }
+      
+      /* Experience section fixes */
+      #experience {
+        padding-top: 140px;
+        padding-bottom: 120px;
+      }
+      
+      .experience-details-container {
+        width: 90%;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      
+      .about-containers {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+      
+      /* Projects section fixes */
+      #projects {
+        padding-top: 140px;
+        padding-bottom: 120px;
+      }
+      
+      /* Contact section fixes */
+      #contact {
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 80px;
+      }
+      
+      .contact-container {
+        width: 90%;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      
+      /* Better arrow positioning */
+      .arrow {
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 153, 0, 0.2);
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        z-index: 10;
+      }
+      
+      .arrow:hover {
+        background: rgba(255, 153, 0, 0.4);
+        transform: translateY(-5px);
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 992px) {
+        .section-container {
+          flex-direction: column;
+          align-items: center;
+          gap: 3rem;
+        }
+        
+        section {
+          padding: 80px 0 50px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scroll-progress-container">
+      <div class="scroll-progress-bar"></div>
+    </div>
+    <nav id="desktop-nav">
+      <div class="logo">Personal Blog</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="hamburger-nav">
+      <div class="logo">Abhishek Karkola</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="blog.html" onclick="toggleMenu()">Blog</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
+    <section id="profile" style="text-align: center;">
+        <div class="section__pic-container">
+            <img src="./assets/My_profile-fotor-20230824122059.png" alt="profile" class="section__pic">
+        </div>
+        <div class="section_text" style="margin-top: 200px;">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title">Abhishek Karkola</h1>
+            <p class="section__text__p2">King of Nerds</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./assets/Abhishek_CV.pdf')">
+                  Download CV
+                </button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                  Contact Info
+                </button>
+            </div>
+            <div id="socials-container">
+                <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="location.href='https://linkedin.com/'"/>
+                <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="location.href='https://github.com/APersonalVoyage'"/>
+                <img src="./assets/instagram.png" alt="My instagram profile" class="icon" onclick="location.href='https://www.instagram.com/apersonalvoyage/'"/>
+                <img src="./assets/twitter.png" alt="My twitter profile" class="icon" onclick="location.href='https://twitter.com/APersonalVoyage'"/>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About section with fixed structure -->
+    <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class="section__pic-container" style="margin-top: 50px">
+                <img src="./assets/Profile_Pic2.JPG" alt="Profile picture" class="about-pic"/>
+            </div>
+            
+            <div class="text-container" style="margin-top: 30px; text-align: justify;">
+                <p>I'm a Data Automation Engineer at Legal and General, passionate about problem-solving, automating workflows, and exploring ideas across various domains.</p>
+                <p>Academically, I hold an MSc in Gravitational Physics from Cardiff University, awarded through a merit-based scholarship, along with a Bachelor's degree in Electronics and Communication. My studies have honed my analytical skills and deepened my curiosity about complex systems.</p>
+                <p>I've worked on intriguing research projects, including investigating Gravitational Wave Constraints on Modified Gravity with Dr. Ian Harrison and learning about Parameter Estimation of Gravitational-wave Sources with Dr. Vivian Raymond. These experiences allowed me to analyze gravitational wave data and uncover insights about the most interesting wave in the universe.</p>
+                <p>Beyond research, I've contributed as a Teaching Assistant, guiding students through Computational Physics using Python. My time at ISRO provided valuable hands-on experience in algorithm development and real-world applications.</p>
+                <p>I have expertise in Python, SQL, and Linux, and I've worked with tools like TensorFlow, Scikit-learn, GWPY, and Astropy during my degree. Now that I working away from Academia, I have had the opportunity to learn and contribute in Snowflake, AWS's Data Engineering services, DBT tool.</p>
+                <p>Additionally, I've participated in hackathons such as the INDIA-SINGAPORE Hackathon 2018 and SMART INDIA HACKATHON 2018, which were incredible learning experiences.</p>
+                <p>Recently, I've revamped my blog to share my perspectives on various topics. Feel free to check it out and connect if you'd like to discuss anything—from space and technology to entirely new ideas. I'd love to exchange thoughts and insights!</p>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'"/>
+    </section>
+    
+    <!-- Experience section with fixed structure -->
+    <section id="experience">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Experience</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Areas of Expertise</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>Linear Algebra</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <!-- Other expertise items -->
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>Tensor Mathematics</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>General Relativity</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>Cosmology</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>Numerical Relativity</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>GW Astrophysics</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Languages and Tools</h2>
+                    <div class="article-container">
+                        <!-- Languages and tools items -->
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>SQL</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>Snowflake</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>Python</h3>
+                                <p>Experienced</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>Git</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>High Performance Computing (HPC)</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="Experience icon" class="icon"/>
+                            <div>
+                                <h3>Wherescape</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                
+                <div class="details-container">
+                    <h2 class="experience-sub-title">Skills Progress</h2>
+                    <div class="skills-container">
+                        <div class="skill">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">SQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">Snowflake</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <span class="skill-name">AWS</span>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'"/>
+    </section>
+    
+    <!-- Projects section with fixed structure -->
+    <section id="projects">
+        <p class="section__text__p1">Browse My Recent</p>
+        <h1 class="title">Projects</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/10-Figure2-1.png" alt="Project 1" class="project-img"/>
+                    </div>
+                    <h2 class="experience-sub-title project-title">Updating Gravitational Wave Constraints on Modified Gravity</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/APersonalVoyage/MSc_Thesis'">
+                          Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/APersonalVoyage/MSc_Thesis/blob/main/Abhishek_Msc_Dissertation%20.pdf'">
+                          Thesis
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/GW150914_IMR.png" alt="Project 2" class="project-img"/>
+                    </div>
+                    <h2 class="experience-sub-title project-title">Parameter Estimation of Gravitational-wave Source</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/APersonalVoyage/GW-data-analysis'">
+                          Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/gw-odw/odw-2021'">
+                          Source Code
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/PE.jpg" alt="Project 3" class="project-img"/>
+                    </div>
+                    <h2 class="experience-sub-title project-title">GW Data Analysis</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/APersonalVoyage/Data-Analysis-2022'">
+                          Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/APersonalVoyage/Data-Analysis-2022'">
+                          Source Code
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="details-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/Screenshot 2023-08-24 at 6.26.45 PM.png" alt="Project 4" class="project-img"/>
+                    </div>
+                    <h2 class="experience-sub-title project-title">Website using html, css and JS</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://github.com/APersonalVoyage/APersonalVoyage.github.io'">
+                          Github
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="location.href='https://apersonalvoyage.github.io/'">
+                          View
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'"/>
+    </section>
+    
+    <!-- Contact section with fixed structure -->
+    <section id="contact">
+        <p class="section__text__p1">Get in Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-container">
+            <div class="contact-info-container">
+                <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
+                <p><a href="mailto:abhishek@alphago.in">abhishek@alphago.in</a></p>
+            </div>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-color-1">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
+    <footer>
+        <nav>
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+            
+            // Save preference in localStorage
+            const isLightMode = document.body.classList.contains('light-mode');
+            localStorage.setItem('lightMode', isLightMode.toString());
+        }
+
+        // Check user preference on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLightMode = localStorage.getItem('lightMode') === 'true';
+            if (isLightMode) {
+                document.body.classList.add('light-mode');
+            }
+            
+            // Add smooth scrolling behavior for improved navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        // Add proper offset to account for fixed navbar
+                        const navHeight = document.querySelector('nav').offsetHeight;
+                        const extraPadding = 20; // Additional padding
+                        const offsetPosition = targetElement.offsetTop - navHeight - extraPadding;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Make sure arrows navigate to correct positions
+            document.querySelectorAll('.arrow').forEach(arrow => {
+                arrow.addEventListener('click', function(e) {
+                    const href = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    if (href) {
+                        e.preventDefault();
+                        const targetId = href.replace('./', '').replace('#', '');
+                        const targetElement = document.getElementById(targetId);
+                        
+                        if (targetElement) {
+                            const navHeight = document.querySelector('nav').offsetHeight;
+                            const extraPadding = 20;
+                            const offsetPosition = targetElement.offsetTop - navHeight - extraPadding;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Scroll progress bar update
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.scrollY;
+            let docHeight = document.documentElement.scrollHeight;
+            let winHeight = window.innerHeight;
+            let scrollPercent = scrollTop / (docHeight - winHeight);
+            document.querySelector('.scroll-progress-bar').style.width = scrollPercent * 100 + '%';
+        });
+    </script>
+    <button id="back-to-top" title="Back to Top">↑</button>
+    <div id="particles-js"></div>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#ff9900" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: false },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#ff9900", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: false, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
+                modes: { repulse: { distance: 100, duration: 0.4 }, push: { particles_nb: 4 } }
+            }
+        });
+    </script>
+</body>
+</html>
+
+    
+
+    
