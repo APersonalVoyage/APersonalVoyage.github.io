@@ -630,20 +630,12 @@ footer p {
   height: 50px;
   font-size: 24px;
   cursor: pointer;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+  display: none;
   z-index: 99;
 }
 
-#back-to-top.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 #back-to-top:hover {
-  background-color: #ff5500;
-  transform: translateY(-5px);
+  background-color: #e68a00;
 }
 
 /* Add to style.css */
@@ -900,16 +892,4 @@ footer p {
   width: 90%;
   max-width: 1000px;
   margin: 0 auto;
-}
-
-/* Section reveal animations */
-.hidden-section {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
