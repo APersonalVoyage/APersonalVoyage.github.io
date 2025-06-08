@@ -110,7 +110,7 @@ export default function BlogPage() {
                 </div>
                 
                 <h2 className="project-title">
-                  <a href="/blog_post_1" className="blog-link">
+                  <a href="/blog/leadership-morality-and-the-struggle-for-humanity" className="blog-link">
                     1. Leadership, Morality, and the Struggle for Humanity
                   </a>
                 </h2>
@@ -126,7 +126,7 @@ export default function BlogPage() {
                   <span className="tag">Morality</span>
                 </div>
                 
-                <a href="/blog_post_1" className="read-more">
+                <a href="/blog/leadership-morality-and-the-struggle-for-humanity" className="read-more">
                   Read Full Article <i className="fas fa-arrow-right"></i>
                 </a>
               </div>
@@ -147,7 +147,7 @@ export default function BlogPage() {
                 </div>
                 
                 <h2 className="project-title">
-                  <a href="/blog_post_2" className="blog-link">
+                  <a href="/blog/why-does-india-struggle-with-civic-sense" className="blog-link">
                     2. Why Does India Struggle with Civic Sense? A Historical, Cultural, and Personal Perspective
                   </a>
                 </h2>
@@ -163,7 +163,7 @@ export default function BlogPage() {
                   <span className="tag">History</span>
                 </div>
                 
-                <a href="/blog_post_2" className="read-more">
+                <a href="/blog/why-does-india-struggle-with-civic-sense" className="read-more">
                   Read Full Article <i className="fas fa-arrow-right"></i>
                 </a>
               </div>

@@ -166,32 +166,6 @@ export default function Contact() {
             </div>
           </div>
         </div>
-
-        {/* Call to Action */}
-        <div className="contact-cta">
-          <div className="cta-content">
-            <h3>Ready to Explore Together?</h3>
-            <p>Join me on this incredible journey through space, time, and the wonders of gravitational wave physics.</p>
-            <div className="cta-links">
-              <a href="https://www.linkedin.com/in/abhishek-karkola-9bb47a163/" className="cta-link">
-                <i className="fab fa-linkedin"></i>
-                <span>LinkedIn</span>
-              </a>
-              <a href="https://github.com/APersonalVoyage" className="cta-link">
-                <i className="fab fa-github"></i>
-                <span>GitHub</span>
-              </a>
-              <a href="https://www.instagram.com/apersonalvoyage/" className="cta-link">
-                <i className="fab fa-instagram"></i>
-                <span>Instagram</span>
-              </a>
-              <a href="https://twitter.com/APersonalVoyage" className="cta-link">
-                <i className="fab fa-twitter"></i>
-                <span>Twitter</span>
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
